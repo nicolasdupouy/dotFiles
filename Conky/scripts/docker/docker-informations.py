@@ -1,6 +1,7 @@
 import subprocess
 
 from Conky.scripts.docker import Constants
+from Conky.scripts.docker.Container import Container
 
 
 def docker_machine():
@@ -17,31 +18,12 @@ def docker_machine():
         print(elem)
 
 def docker_container():
-    container_ls = subprocess.check_output(Constants.DOCKER_CONTAINER_COMMAND)
-    command_result = container_ls.decode(Constants.UTF_8)
-    print(count_containers(command_result))
+    container = Container()
+    print(container.count_containers())
     #s = command_result.split(NEW_LINE)
     #print(command_result)
 
-def count_containers(command_result):
-    valid_lines = filter_header_and_empty_lines(command_result)
-    line_number = len(valid_lines)
-    if line_number > 1:
-        return "{} {}".format(Constants.RUNNING_CONTAINERS, line_number)
-    else:
-        return "{} {}".format(Constants.RUNNING_CONTAINER, line_number)
 
-def filter_header_and_empty_lines(command_result):
-    return [line for line in command_result.split(Constants.NEW_LINE) if not is_header_or_empty_line(line)]
-
-def is_header_or_empty_line(line):
-    return is_empty_line(line) or contains_header(line)
-
-def is_empty_line(line):
-    return len(line) == 0
-
-def contains_header(line):
-    return Constants.CONTAINER_ID in line and Constants.IMAGE in line
 
 docker_machine()
 docker_container()
