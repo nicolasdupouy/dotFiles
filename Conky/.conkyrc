@@ -1,0 +1,187 @@
+conky.config = {
+	background = false,
+	
+	update_interval = 1.0,
+	total_run_times = 0,
+
+	-- # Window specifications
+    --------------------------
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	minimum_width = 100, minimum_height = 100,
+	--maximum_width = 300,
+	alignment = 'bottom_left',
+	gap_x = 20, --12,
+	gap_y = 0, --5,
+    
+    own_window = true,
+    own_window_transparent = true,
+    own_window_type = 'normal',
+    own_window_argb_visual = true,
+    own_window_class = 'override',
+
+    draw_graph_borders = false,
+    stippled_borders = 3,
+    border_margin = '9',
+    
+	draw_shades = false, --true,
+	draw_outline = false,-- amplifies text if yes
+	draw_borders = false,
+	
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	override_utf8_locale = false,
+
+    -- # Text settings
+    ------------------
+	use_xft = true,
+	--font = 'Eurostile:size=16',
+	--xftfont = 'Eurostile:size=10',
+	--xftalpha = 0.7,
+	--font = 'Sans:size=8',
+    xftfont = 'Eurostile:size=8',
+	font = 'Eurostile:size=11',
+	xftalpha = 0.7,
+    
+    -- # lua load
+    -------------
+    --lua_load = '~/conky_configuration_files/Themes/conky-dashboard/conky_dashboard.lua',
+    lua_load = '~/conky_configuration_files/luascript.lua',
+    lua_draw_hook_post = "main"
+	--lua_draw_hook_pre = 'conky_main',
+};
+
+conky.text = [[
+################################################################################
+## SYSTEM
+################################################################################
+${font alba:size=16}${color orange}SYSTEM${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+#Updates: ${updates}
+# T for Gnome logo alone, S for Gnome logo with text
+# see 'https://www.dafont.com/openlogos.font'
+${color orange}${font openlogos:size=30}T$font$color
+${voffset -38}${goto 60}$sysname  $kernel on $machine${voffset -18}
+${voffset 16}${goto 60}$nodename  ${font arial black:size=9}UP: $font$uptime ${voffset -18}
+${voffset 6}${goto 20}${font arial black:size=30}${time %e}$font ${voffset -13}${goto 85}${time %A, }${time %B} ${time %G}
+${voffset -1}${goto 80}${font arial black:size=10} ${time %H:%M:%S %p}
+#${font arial black:size=12}${color orange}SYSTEM ${hr 2}$color$font
+#${color FF9900}${font sans-serif:bold:size=8:}SYSTEM ${hr 2}
+#${font sans-serif:size=10}${color FFFF00}$sysname $kernel $alignr $machine
+#Host: $alignr $nodename
+#Uptime: $alignr $uptime
+#$color$font
+#Battery: $alignr ${battery_percent BAT1}%
+#Battery Time: $alignr ${battery_time BAT1}
+################################################################################
+## CPU INFORMATIONS
+################################################################################
+${font alba:size=16}${color orange}CPU${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font arial black:size=9}USAGE (AVG): $font${cpu cpu0}%
+${cpugraph cpu0 303030 C0C0C0}
+${font arial black:size=9}CORE 1: $font${cpu cpu1}% $alignr ${font arial black:size=9}CORE 2: $font${cpu cpu2}%
+${cpugraph cpu1 25,140 303030 C0C0C0}  $alignr${cpugraph cpu2 25,140 303030 C0C0C0}
+${font arial black:size=9}CORE 3: $font${cpu cpu3}% $alignr ${font arial black:size=9}CORE 4: $font${cpu cpu4}%
+${cpugraph cpu3 25,140 303030 C0C0C0}  $alignr${cpugraph cpu4 25,140 303030 C0C0C0}
+#
+################################################################################
+## MEMORY
+################################################################################
+${font alba:size=16}${color orange}MEMORY${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font arial black:size=9}RAM: $font$memperc% ${alignr}$mem ${font arial black:size=9}/ $font$memmax 
+${membar 4}
+${font arial black:size=9}SWAP: $font$swapperc% ${alignr}$swap ${font arial black:size=9}/ $font$swapmax 
+${swapbar 4}
+#
+################################################################################
+## NETWORK informations
+################################################################################
+${font alba:size=16}${color orange}NETWORK${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font arial black:size=9}IP address: $font$alignr ${addr enp8s0}
+Gateway IP: $alignr $gw_ip
+Gateway interface: $alignr $gw_iface
+#ESSID: $alignr ${wireless_essid enp8s0}
+#Connection Quality: $alignr ${wireless_link_qual_perc enp8s0}%
+#
+$alignr Download
+${downspeedgraph enp8s0}
+${downspeed enp8s0}/s $alignr ${totaldown enp8s0}
+#
+$alignr Upload
+${upspeedgraph enp8s0}
+${upspeed enp8s0}/s $alignr ${totalup enp8s0}
+#
+$color $font
+################################################################################
+## VPN informations
+################################################################################
+${font alba:size=16}${color orange}VPN${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+#${font sans-serif:normal:size=8}${color FFFF00}IP address: $alignr ${addr tun0}$color$font
+${font arial black:size=10}IP address: $alignr ${addr tun0}$font
+#${font sans-serif:normal:size=12}IP address: $alignr ${addr tun0}$font
+#${font arial black:size=12}IP address: $alignr ${addr tun0}$font
+################################################################################
+################################################################################
+## Docker processes
+################################################################################
+${font alba:size=16}${color orange}DOCKER${color}${font arial black:size=11}PROCESSES${color orange} ${hr 2}$color$font
+#${font arial black:size=10}IP address: $alignr ${addr tun0}$font
+#${execpi 700 $HOME/.conky/scripts/backup_status}
+#${execpi 60 python ~/.conky/scripts/gmail.py}
+#${execpi 60 python3 /home/nicolas/conky_configuration_files/scripts/docker-informations.py}
+
+
+#${execpi 700 /home/nicolas/conky_configuration_files/Themes/Black Pearl Conky/scripts/backup_status}
+################################################################################
+## TOP processes
+################################################################################
+${font alba:size=16}${color orange}TOP${color}${font arial black:size=11}PROCESSES${color orange} ${hr 2}$color$font
+#${font sans-serif:bold:size=8}${color FF9900}TOP PROCESSES ${hr 2}
+${font arial black:size=9}${top_mem name 1}${alignr}${top mem 1} %
+${top_mem name 2}${alignr}${top mem 2} %
+${top_mem name 3}${alignr}${top mem 3} %
+${top_mem name 4}${alignr}${top mem 4} %
+${top_mem name 5}${alignr}${top mem 5} %
+#
+$font
+################################################################################
+## DISKS informations
+################################################################################
+${font alba:size=16}${color orange}DISKS${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+#${font arial black:size=12}${color orange}DISKS${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font arial black:size=9}VOLUME${goto 120}TYPE${goto 200}Used${goto 330}%FREE${goto 400}SIZE$font
+${font arial black:size=9}ROOT$font${goto 120}${fs_type /}${goto 200}${fs_used /} / ${fs_size /}${goto 330}${fs_free_perc /}%${goto 400}${fs_size /}
+${fs_bar 4 /}$color
+${font arial black:size=9}HOME$font${goto 120}${fs_type /home}${goto 200}${fs_used /home} / ${fs_size /home}${goto 330}${fs_free_perc /home}%${goto 400}${fs_size /home}
+${fs_bar 4 /home}$color
+${font arial black:size=9}OPT$font${goto 120}${fs_type /opt}${goto 200}${fs_used /opt} / ${fs_size /opt}${goto 330}${fs_free_perc /opt}%${goto 400}${fs_size /opt}
+${fs_bar 4 /opt}$color
+${font arial black:size=9}TMP$font${goto 120}${fs_type /tmp}${goto 200}${fs_used /tmp} / ${fs_size /tmp}${goto 330}${fs_free_perc /tmp}%${goto 400}${fs_size /tmp}
+${fs_bar 4 /tmp}$color
+${font arial black:size=9}/mnt/4To$font${goto 120}${fs_type /mnt/4To}${goto 200}${fs_used /mnt/4To} / ${fs_size /mnt/4To}${goto 330}${fs_free_perc /mnt/4To}%${goto 400}${fs_size /mnt/4To}
+${fs_bar 4 /mnt/4To}$color
+# --- SynologyDS216j
+# -> Datas_Accounting
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Accounting}${font arial black:size=9}Datas_Accounting$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Accounting}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Accounting} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Accounting}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}
+${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Accounting}$color $endif
+## -> Datas_Documents
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Documents}${font arial black:size=9}Datas_Documents$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Documents}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Documents} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Documents}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}
+${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Documents}$color $endif
+## -> Datas_Multimedia
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Multimedia}${font arial black:size=9}Datas_Multimedia$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Multimedia}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Multimedia} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Multimedia}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}
+${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Multimedia}$color $endif
+## -> Datas_Photos
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Photos}${font arial black:size=9}Datas_Photos$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Photos}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Photos} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Photos}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}
+${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Photos}$color $endif
+# --- DNS-323
+# -> /mnt/datas/DNS-323/Multimedia
+${if_mounted /mnt/datas/DNS-323/Multimedia}${font arial black:size=9}Multimedia$font${goto 120}${fs_type /mnt/datas/DNS-323/Multimedia}${goto 200}${fs_used /mnt/datas/DNS-323/Multimedia} / ${fs_size /mnt/datas/DNS-323/Multimedia}${goto 330}${fs_free_perc /mnt/datas/DNS-323/Multimedia}%${goto 400}${fs_size /mnt/datas/DNS-323/Multimedia}
+${fs_bar 4 /mnt/datas/DNS-323/Multimedia}$color $endif
+# -> /mnt/datas/DNS-323/Musique
+${if_mounted /mnt/datas/DNS-323/Musique}${font arial black:size=9}Musique$font${goto 120}${fs_type /mnt/datas/DNS-323/Musique}${goto 200}${fs_used /mnt/datas/DNS-323/Musique} / ${fs_size /mnt/datas/DNS-323/Musique}${goto 330}${fs_free_perc /mnt/datas/DNS-323/Musique}%${goto 400}${fs_size /mnt/datas/DNS-323/Musique}
+${fs_bar 4 /mnt/datas/DNS-323/Musique}$color $endif
+# -> /mnt/datas/DNS-323/Docs
+${if_mounted /mnt/datas/DNS-323/Docs}${font arial black:size=9}Docs$font${goto 120}${fs_type /mnt/datas/DNS-323/Docs}${goto 200}${fs_used /mnt/datas/DNS-323/Docs} / ${fs_size /mnt/datas/DNS-323/Docs}${goto 330}${fs_free_perc /mnt/datas/DNS-323/Docs}%${goto 400}${fs_size /mnt/datas/DNS-323/Docs}
+${fs_bar 4 /mnt/datas/DNS-323/Docs}$color $endif
+#
+]];

@@ -1,0 +1,10 @@
+# IntelliJ
+.idea/
+out/
+
+# Conky
+convert.lua
+Conky/USELESS/*
+
+# Python
+**/Conky/__init__.py
