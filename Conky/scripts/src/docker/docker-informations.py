@@ -15,7 +15,7 @@ def docker_machine():
 def docker_container():
     container = Container()
     print(container.count_containers())
-    container.display_container_names()
+    print(container.get_container_names())
 
 docker_machine()
 docker_container()

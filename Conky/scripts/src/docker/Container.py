@@ -1,13 +1,17 @@
 import subprocess
 
-import Constants
+from src.docker import Constants
+
 
 class Container:
 
     def __init__(self):
-        container_ls = subprocess.check_output(Constants.DOCKER_CONTAINER_COMMAND)
-        command_result = container_ls.decode(Constants.UTF_8)
+        command_result = self.get_command_result()
         self.valid_lines = self.filter_header_and_empty_lines(command_result)
+
+    def get_command_result(self):
+        container_ls = subprocess.check_output(Constants.DOCKER_CONTAINER_COMMAND)
+        return container_ls.decode(Constants.UTF_8)
 
     def count_containers(self):
         line_number = len(self.valid_lines)
@@ -16,11 +20,13 @@ class Container:
         else:
             return "{} {}".format(Constants.RUNNING_CONTAINER, line_number)
 
-    def display_container_names(self):
+    def get_container_names(self):
+        container_names = []
         for index, line in enumerate(self.valid_lines):
             elements = self.split_results(line)
             (container_id, image) = self.extract_container_and_image_name(elements)
-            print("  => {}: {} / {}".format(index+1, container_id, image))
+            container_names.append("  => {}: {} / {}".format(index+1, container_id, image))
+        return "\n".join(container_names)
 
     def filter_header_and_empty_lines(self, command_result):
         return [line for line in command_result.split(Constants.NEW_LINE) if not self.is_header_or_empty_line(line)]
