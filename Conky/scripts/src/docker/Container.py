@@ -2,7 +2,6 @@ import subprocess
 
 from src.docker import Constants
 
-
 class Container:
 
     def __init__(self):

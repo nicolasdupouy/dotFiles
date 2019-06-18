@@ -1,8 +1,7 @@
 import subprocess
 
-import Constants
-from Container import Container
-
+from src.docker import Constants
+from src.docker.Container import Container
 
 def docker_machine():
     print("> docker-machine ls")
@@ -17,5 +16,6 @@ def docker_container():
     print(container.count_containers())
     print(container.get_container_names())
 
-docker_machine()
-docker_container()
+if __name__ == '__main__':
+    docker_machine()
+    docker_container()

@@ -1,4 +1,3 @@
-
 DOCKER_CONTAINER_COMMAND = ["docker", "container", "ls"]
 DOCKER_MACHINE_COMMAND = ["docker-machine", "ls"]
 
