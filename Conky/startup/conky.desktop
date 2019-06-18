@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Conky
+Comment=Moniteur système
+Exec=/home/nicolas/.config/autostart/conky-startup-script.sh &
+#Exec=conky &
+Terminal=false
+Type=Application
+Icon=gnome-monitor
+Categories=System;
+StartupNotify=false
+
