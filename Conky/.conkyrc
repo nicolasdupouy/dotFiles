@@ -33,6 +33,10 @@ conky.config = {
 	cpu_avg_samples = 2,
 	override_utf8_locale = false,
 
+    ---------------------------------- Variables couleurs
+    --color1 = '#000000',
+    color2 = '#FFFFFF',
+    
     -- # Text settings
     ------------------
 	use_xft = true,
@@ -61,8 +65,8 @@ ${font alba:size=16}${color orange}SYSTEM${color}${font arial black:size=11}INFO
 # T for Gnome logo alone, S for Gnome logo with text
 # see 'https://www.dafont.com/openlogos.font'
 ${color orange}${font openlogos:size=30}T$font$color
-${voffset -38}${goto 60}$sysname  $kernel on $machine${voffset -18}
-${voffset 16}${goto 60}$nodename  ${font arial black:size=9}UP: $font$uptime ${voffset -18}
+${voffset -38}${goto 70}$sysname  $kernel on $machine${voffset -18}
+${voffset 16}${goto 70}$nodename  ${font arial black:size=9}UP: $font$uptime ${voffset -18}
 ${voffset 6}${goto 20}${font arial black:size=30}${time %e}$font ${voffset -13}${goto 85}${time %A, }${time %B} ${time %G}
 ${voffset -1}${goto 80}${font arial black:size=10} ${time %H:%M:%S %p}
 #${font arial black:size=12}${color orange}SYSTEM ${hr 2}$color$font
@@ -117,7 +121,15 @@ $color $font
 ################################################################################
 ${font alba:size=16}${color orange}VPN${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
 #${font sans-serif:normal:size=8}${color FFFF00}IP address: $alignr ${addr tun0}$color$font
-${font arial black:size=10}IP address: $alignr ${addr tun0}$font
+#${font arial black:size=10}IP address: $alignr ${addr tun0}$font
+#${font Ubuntu :size=10:weight=bold}${color2}IP Publique : ${alignr}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$font
+#${if_match "${addr tun0}" == "No Address"}${color red}$alignr ${addr tun0}$color${else}${color orange}$alignr ${addr tun0}$color$endif
+#
+Local IP: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}${addr tun0}$font$color${else}${addr tun0}$endif
+Public IP: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$font$color${else}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$endif
+VPN interface: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}tun0$font$color${else}tun0$endif
+#${if_match "${battery_short}" != "D"}${image ~/conky/charging.png -p 209,491}${else}${image ~/conky/discharging.png -p 209,491}$endif
+#
 #${font sans-serif:normal:size=12}IP address: $alignr ${addr tun0}$font
 #${font arial black:size=12}IP address: $alignr ${addr tun0}$font
 ################################################################################
