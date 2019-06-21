@@ -7,4 +7,5 @@ convert.lua
 Conky/USELESS/*
 
 # Python
-**/Conky/__init__.py
+__pycache__/
+
