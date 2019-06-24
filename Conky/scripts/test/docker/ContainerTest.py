@@ -19,14 +19,18 @@ f728a8c2b5b9        hello_friend_python_application   "python app.py"     About 
   => 1: d878f6455fd9 / hello_friend_python_application / 80/tcp
   => 2: f728a8c2b5b9 / hello_friend_python_application / 80/tcp'''
 
+    def mock_side_effect_for_zero_containers(self):
+        return self.COMMAND_RESULT_ZERO_CONTAINER
+
+    def mock_side_effect_for_one_container(self):
+        return self.COMMAND_RESULT_ONE_CONTAINER
+
+    def mock_side_effect_for_two_containers(self):
+        return self.COMMAND_RESULT_TWO_CONTAINER
+
     @patch.object(Container, 'get_command_result')
     def test_no_container_running_should_display_zero(self, mock_my_method):
-        # Could be made with the class name
-        #Container.get_command_result = MagicMock(return_value = self.COMMAND_RESULT_ZERO_CONTAINER)
-        list_of_return_values = self.COMMAND_RESULT_ZERO_CONTAINER
-        def side_effect():
-            return list_of_return_values
-        mock_my_method.side_effect = side_effect
+        mock_my_method.side_effect = self.mock_side_effect_for_zero_containers
 
         container = Container()
         result = container.count_containers()
@@ -34,10 +38,7 @@ f728a8c2b5b9        hello_friend_python_application   "python app.py"     About 
 
     @patch.object(Container, 'get_command_result')
     def test_one_container_running_should_display_one(self, mock_my_method):
-        list_of_return_values = self.COMMAND_RESULT_ONE_CONTAINER
-        def side_effect():
-            return list_of_return_values
-        mock_my_method.side_effect = side_effect
+        mock_my_method.side_effect = self.mock_side_effect_for_one_container
 
         container = Container()
         result = container.count_containers() + '\n' + container.get_container_names()
@@ -45,11 +46,7 @@ f728a8c2b5b9        hello_friend_python_application   "python app.py"     About 
 
     @patch.object(Container, 'get_command_result')
     def test_two_container_running_should_display_two(self, mock_my_method):
-        list_of_return_values = self.COMMAND_RESULT_TWO_CONTAINER
-        def side_effect():
-            return list_of_return_values
-        # Doesn't work ! :mock_my_method.side_effect = self.COMMAND_RESULT_TWO_CONTAINER
-        mock_my_method.side_effect = side_effect
+        mock_my_method.side_effect = self.mock_side_effect_for_two_containers
 
         container = Container()
         result = container.count_containers() + '\n' + container.get_container_names()
