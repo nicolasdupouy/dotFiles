@@ -14,10 +14,10 @@ f728a8c2b5b9        hello_friend_python_application   "python app.py"     About 
 
     OUTPUT_RESULT_ZERO_CONTAINER = "> Running container: 0"
     OUTPUT_RESULT_ONE_CONTAINER = '''> Running container: 1
-  => 1: f728a8c2b5b9 / hello_friend_python_application'''
+  => 1: f728a8c2b5b9 / hello_friend_python_application / 80/tcp'''
     OUTPUT_RESULT_TWO_CONTAINER = '''> Running containers: 2
-  => 1: d878f6455fd9 / hello_friend_python_application
-  => 2: f728a8c2b5b9 / hello_friend_python_application'''
+  => 1: d878f6455fd9 / hello_friend_python_application / 80/tcp
+  => 2: f728a8c2b5b9 / hello_friend_python_application / 80/tcp'''
 
     @patch.object(Container, 'get_command_result')
     def test_no_container_running_should_display_zero(self, mock_my_method):

@@ -23,8 +23,8 @@ class Container:
         container_names = []
         for index, line in enumerate(self.valid_lines):
             elements = self.split_results(line)
-            (container_id, image) = self.extract_container_and_image_name(elements)
-            container_names.append("  => {}: {} / {}".format(index+1, container_id, image))
+            (container_id, image, port) = self.extract_informations(elements)
+            container_names.append("  => {}: {} / {} / {}".format(index+1, container_id, image, port))
         return "\n".join(container_names)
 
     def filter_header_and_empty_lines(self, command_result):
@@ -40,7 +40,12 @@ class Container:
         return Constants.CONTAINER_ID in line and Constants.IMAGE in line
 
     def split_results(self, line):
-        return [elem for elem in line.split(' ') if len(elem) > 0]
+        return [elem for elem in line.split('  ') if len(elem) > 0]
 
-    def extract_container_and_image_name(self, elements):
-        return (elements[0], elements[1])
+    def extract_informations(self, elements):
+        return (self.extract_trimmed_element(elements, 0),
+                self.extract_trimmed_element(elements, 1),
+                self.extract_trimmed_element(elements, 5))
+
+    def extract_trimmed_element(self, elements, index):
+        return elements[index].strip()
