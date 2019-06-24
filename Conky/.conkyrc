@@ -138,19 +138,17 @@ VPN interface: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${f
 ################################################################################
 ${font alba:size=16}${color orange}DOCKER${color}${font arial black:size=11}PROCESSES${color orange} ${hr 2}$color$font
 # Execute script every n seconds (http://conky.sourceforge.net/variables.html)
-${execpi 10 python3 /home/nicolas/gitRepositories/dotFiles/Conky/scripts/src/docker/docker-informations.py}
+${font Consolas:normal:size=9}${execpi 10 python3 /home/nicolas/gitRepositories/dotFiles/Conky/scripts/src/docker/docker-informations.py}$font
 ################################################################################
 ## TOP processes
 ################################################################################
 ${font alba:size=16}${color orange}TOP${color}${font arial black:size=11}PROCESSES${color orange} ${hr 2}$color$font
 #${font sans-serif:bold:size=8}${color FF9900}TOP PROCESSES ${hr 2}
-${font arial black:size=9}${top_mem name 1}${alignr}${top mem 1} %
+${font arial:size=9}${top_mem name 1}${alignr}${top mem 1} %
 ${top_mem name 2}${alignr}${top mem 2} %
 ${top_mem name 3}${alignr}${top mem 3} %
 ${top_mem name 4}${alignr}${top mem 4} %
-${top_mem name 5}${alignr}${top mem 5} %
-#
-$font
+${top_mem name 5}${alignr}${top mem 5} %$font
 ################################################################################
 ## DISKS informations
 ################################################################################
