@@ -6,6 +6,12 @@ from src.docker.Container import Container
 def display_machine():
     display_command(Constants.DOCKER_MACHINE_COMMAND)
 
+def display_stack():
+    display_command(Constants.DOCKER_STACK_COMMAND)
+
+def display_service():
+    display_command(Constants.DOCKER_SERVICE_COMMAND)
+
 def display_command(command):
     print(get_command_to_display(command))
 
@@ -29,4 +35,6 @@ def display_container():
 
 if __name__ == '__main__':
     display_machine()
+    display_stack()
+    display_service()
     display_container()

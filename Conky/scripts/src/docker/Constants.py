@@ -1,5 +1,7 @@
-DOCKER_CONTAINER_COMMAND = ["docker", "container", "ls"]
 DOCKER_MACHINE_COMMAND = ["docker-machine", "ls"]
+DOCKER_STACK_COMMAND = ["docker", "stack", "ls"]
+DOCKER_SERVICE_COMMAND = ["docker", "service", "ls"]
+DOCKER_CONTAINER_COMMAND = ["docker", "container", "ls"]
 
 NEW_LINE = '\n'
 UTF_8 = "utf-8"
