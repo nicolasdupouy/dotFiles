@@ -37,6 +37,7 @@ def display_container():
 
 if __name__ == '__main__':
     swarm = Swarm()
+    display_machine()
     if swarm.isInitialized():
         display_stack()
         display_service()
