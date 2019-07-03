@@ -9,4 +9,4 @@ class Swarm:
         return True if self.run_check_command()==Constants.RETURN_CODE_SUCCESS else False
 
     def run_check_command(self):
-        return subprocess.call(Constants.DOCKER_STACK_COMMAND, stdout=subprocess.PIPE)
+        return subprocess.call(Constants.DOCKER_STACK_COMMAND, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
