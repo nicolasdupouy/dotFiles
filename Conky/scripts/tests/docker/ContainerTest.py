@@ -3,6 +3,7 @@ from src.docker.Container import Container
 from unittest.mock import patch
 
 class ContainerTest(unittest.TestCase):
+
     COMMAND_RESULT_ZERO_CONTAINER = "CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES"
     COMMAND_RESULT_ONE_CONTAINER = '''CONTAINER ID        IMAGE                             COMMAND             CREATED             STATUS              PORTS               NAMES
 f728a8c2b5b9        hello_friend_python_application   "python app.py"     6 seconds ago       Up 4 seconds        80/tcp              clever_golick'''
@@ -49,6 +50,3 @@ f728a8c2b5b9        hello_friend_python_application   "python app.py"     About 
         container = Container()
         result = container.count_containers() + '\n' + container.get_container_names()
         self.assertEqual(self.OUTPUT_RESULT_TWO_CONTAINER, result)
-
-    if __name__ == '__main__':
-        unittest.main()
