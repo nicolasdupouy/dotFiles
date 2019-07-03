@@ -2,6 +2,8 @@ import subprocess
 
 from src.docker import Constants
 from src.docker.Container import Container
+from src.docker.Swarm import Swarm
+
 
 def display_machine():
     display_command(Constants.DOCKER_MACHINE_COMMAND)
@@ -34,7 +36,8 @@ def display_container():
     print(container.get_container_names())
 
 if __name__ == '__main__':
-    display_machine()
-    display_stack()
-    display_service()
+    swarm = Swarm()
+    if swarm.isInitialized():
+        display_stack()
+        display_service()
     display_container()
