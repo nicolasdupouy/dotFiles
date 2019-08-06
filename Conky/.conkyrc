@@ -51,7 +51,7 @@ conky.config = {
     -- # lua load
     -------------
     --lua_load = '~/conky_configuration_files/Themes/conky-dashboard/conky_dashboard.lua',
-    lua_load = '~/conky_configuration_files/luascript.lua',
+    lua_load = '~/gitRepositories/dotFiles/Conky/luascript.lua',
     lua_draw_hook_post = "main"
 	--lua_draw_hook_pre = 'conky_main',
 };
@@ -126,6 +126,7 @@ ${font alba:size=16}${color orange}VPN${color}${font arial black:size=11}INFORMA
 #${if_match "${addr tun0}" == "No Address"}${color red}$alignr ${addr tun0}$color${else}${color orange}$alignr ${addr tun0}$color$endif
 #
 Local IP: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}${addr tun0}$font$color${else}${addr tun0}$endif
+Default IP: $alignr X.X.X.X
 Public IP: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$font$color${else}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$endif
 VPN interface: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}tun0$font$color${else}tun0$endif
 #${if_match "${battery_short}" != "D"}${image ~/conky/charging.png -p 209,491}${else}${image ~/conky/discharging.png -p 209,491}$endif
