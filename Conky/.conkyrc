@@ -32,10 +32,6 @@ conky.config = {
 	cpu_avg_samples = 2,
 	override_utf8_locale = false,
 
-    ---------------------------------- Variables couleurs
-    --color1 = '#000000',
-    color2 = '#FFFFFF',
-
     -- # Text settings
     ------------------
 	use_xft = true,
@@ -54,7 +50,7 @@ conky.text = [[
 ################################################################################
 ## SYSTEM
 ################################################################################
-${font alba:size=16}${color orange}SYSTEM${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font alba:size=16}${color orange}SYSTEM${color}${font arial black:size=11} INFORMATIONS${color orange} ${hr 2}$color$font
 #Updates: ${updates}
 # T for Gnome logo alone, S for Gnome logo with text
 # see 'https://www.dafont.com/openlogos.font'
@@ -71,10 +67,11 @@ ${voffset -1}${goto 80}${font arial black:size=10} ${time %H:%M:%S %p}
 #$color$font
 #Battery: $alignr ${battery_percent BAT1}%
 #Battery Time: $alignr ${battery_time BAT1}
+#
 ################################################################################
 ## CPU INFORMATIONS
 ################################################################################
-${font alba:size=16}${color orange}CPU${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font alba:size=16}${color orange}CPU${color}${font arial black:size=11} INFORMATIONS${color orange} ${hr 2}$color$font
 ${font arial black:size=9}USAGE (AVG): $font${cpu cpu0}%
 ${cpugraph cpu0 303030 C0C0C0}
 ${font arial black:size=9}CORE 1: $font${cpu cpu1}% $alignr ${font arial black:size=9}CORE 2: $font${cpu cpu2}%
@@ -85,7 +82,7 @@ ${cpugraph cpu3 25,140 303030 C0C0C0}  $alignr${cpugraph cpu4 25,140 303030 C0C0
 ################################################################################
 ## MEMORY
 ################################################################################
-${font alba:size=16}${color orange}MEMORY${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font alba:size=16}${color orange}MEMORY${color}${font arial black:size=11} INFORMATIONS${color orange} ${hr 2}$color$font
 ${font arial black:size=9}RAM: $font$memperc% ${alignr}$mem ${font arial black:size=9}/ $font$memmax
 ${membar 4}
 ${font arial black:size=9}SWAP: $font$swapperc% ${alignr}$swap ${font arial black:size=9}/ $font$swapmax
@@ -94,7 +91,7 @@ ${swapbar 4}
 ################################################################################
 ## NETWORK informations
 ################################################################################
-${font alba:size=16}${color orange}NETWORK${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font alba:size=16}${color orange}NETWORK${color}${font arial black:size=11} INFORMATIONS${color orange} ${hr 2}$color$font
 ${font arial black:size=9}IP address: $font$alignr ${addr enp8s0}
 Gateway IP: $alignr $gw_ip
 Gateway interface: $alignr $gw_iface
@@ -110,34 +107,63 @@ ${upspeedgraph enp8s0}
 ${upspeed enp8s0}/s $alignr ${totalup enp8s0}
 #
 $color $font
+#
 ################################################################################
 ## VPN informations
 ################################################################################
-${font alba:size=16}${color orange}VPN${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
+${font alba:size=16}${color orange}VPN${color}${font arial black:size=11} INFORMATIONS${color orange} ${hr 2}$color$font
 #${font sans-serif:normal:size=8}${color FFFF00}IP address: $alignr ${addr tun0}$color$font
 #${font arial black:size=10}IP address: $alignr ${addr tun0}$font
-#${font Ubuntu :size=10:weight=bold}${color2}IP Publique : ${alignr}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$font
 #${if_match "${addr tun0}" == "No Address"}${color red}$alignr ${addr tun0}$color${else}${color orange}$alignr ${addr tun0}$color$endif
 #
-Local IP: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}${addr tun0}$font$color${else}${addr tun0}$endif
-Default IP: $alignr X.X.X.X
-Public IP: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$font$color${else}${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}$endif
-VPN interface: $alignr ${if_match "${addr tun0}" == "No Address"}${color red}${font Ubuntu :size=10:weight=bold}tun0$font$color${else}tun0$endif
-#${if_match "${battery_short}" != "D"}${image ~/conky/charging.png -p 209,491}${else}${image ~/conky/discharging.png -p 209,491}$endif
 #
-#${font sans-serif:normal:size=12}IP address: $alignr ${addr tun0}$font
-#${font arial black:size=12}IP address: $alignr ${addr tun0}$font
+Local IP: $alignr \
+${if_match "${addr tun0}" == "No Address"}\
+${color red}${font Ubuntu :size=10:weight=bold}\
+${addr tun0}\
+$font$color\
+${else}\
+${addr tun0}\
+$endif
+#
+#
+Default IP: $alignr X.X.X.X
+#
+#
+Public IP: $alignr \
+${if_match "${addr tun0}" == "No Address"}\
+${color red}${font Ubuntu :size=10:weight=bold}\
+${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}\
+$font$color\
+${else}\
+${texeci 600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}\
+$endif
+#
+#
+VPN interface: $alignr \
+${if_match "${addr tun0}" == "No Address"}\
+${color red}${font Ubuntu :size=10:weight=bold}\
+tun0\
+$font$color\
+${else}\
+tun0\
+$endif
+#
 ################################################################################
+#
 ################################################################################
 ## Docker processes
 ################################################################################
-${font alba:size=16}${color orange}DOCKER${color}${font arial black:size=11}PROCESSES${color orange} ${hr 2}$color$font
+${font alba:size=16}${color orange}DOCKER${color}${font arial black:size=11} PROCESSES${color orange} ${hr 2}$color$font
 # Execute script every n seconds (http://conky.sourceforge.net/variables.html)
-${font Consolas:normal:size=9}${execpi 10 python3 /home/nicolas/gitRepositories/dotFiles/Conky/scripts/src/docker/docker-informations.py}$font
+${font Consolas:normal:size=9}\
+${execpi 10 python3 /home/nicolas/gitRepositories/dotFiles/Conky/scripts/src/docker/docker-informations.py}\
+$font
+#
 ################################################################################
 ## TOP processes
 ################################################################################
-${font alba:size=16}${color orange}TOP${color}${font arial black:size=11}PROCESSES${color orange} ${hr 2}$color$font
+${font alba:size=16}${color orange}TOP${color}${font arial black:size=11} PROCESSES${color orange} ${hr 2}$color$font
 #${font sans-serif:bold:size=8}${color FF9900}TOP PROCESSES ${hr 2}
 ${font arial black:size=10}Name${goto 250}PID${goto 330}CPU%${goto 400}MEM%$font
 ${font arial:size=10}${top name 1}${goto 250}${top pid 1}${goto 330}${top cpu 1}${goto 400}${top mem 1}$font
@@ -148,44 +174,133 @@ ${font arial:size=10}${top name 5}${goto 250}${top pid 5}${goto 330}${top cpu 5}
 ${font arial:size=10}${top name 6}${goto 250}${top pid 6}${goto 330}${top cpu 6}${goto 400}${top mem 6}$font
 ${font arial:size=10}${top name 7}${goto 250}${top pid 7}${goto 330}${top cpu 7}${goto 400}${top mem 7}$font
 ${font arial:size=10}${top name 8}${goto 250}${top pid 8}${goto 330}${top cpu 8}${goto 400}${top mem 8}$font
+
 ################################################################################
 ## DISKS informations
 ################################################################################
-${font alba:size=16}${color orange}DISKS${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
-#${font arial black:size=12}${color orange}DISKS${color}${font arial black:size=11}INFORMATIONS${color orange} ${hr 2}$color$font
-${font arial black:size=9}VOLUME${goto 120}TYPE${goto 200}Used${goto 330}%FREE${goto 400}SIZE$font
-${font arial black:size=9}ROOT$font${goto 120}${fs_type /}${goto 200}${fs_used /} / ${fs_size /}${goto 330}${fs_free_perc /}%${goto 400}${fs_size /}
+#
+#
+${font alba:size=16}${color orange}DISKS${color}${font arial black:size=11} INFORMATIONS${color orange} ${hr 2}$color$font
+#
+#
+
+${font arial black:size=9}VOLUME\
+${goto 120}TYPE\
+${goto 200}Used\
+${goto 330}%FREE\
+${goto 400}SIZE\
+$font
+#
+#
+${font arial black:size=9}ROOT$font\
+${goto 120}${fs_type /}\
+${goto 200}${fs_used /} / ${fs_size /}\
+${goto 330}${fs_free_perc /}%\
+${goto 400}${fs_size /}
 ${fs_bar 4 /}$color
-${font arial black:size=9}HOME$font${goto 120}${fs_type /home}${goto 200}${fs_used /home} / ${fs_size /home}${goto 330}${fs_free_perc /home}%${goto 400}${fs_size /home}
+#
+#
+${font arial black:size=9}HOME$font\
+${goto 120}${fs_type /home}\
+${goto 200}${fs_used /home} / ${fs_size /home}\
+${goto 330}${fs_free_perc /home}%\
+${goto 400}${fs_size /home}
 ${fs_bar 4 /home}$color
-${font arial black:size=9}OPT$font${goto 120}${fs_type /opt}${goto 200}${fs_used /opt} / ${fs_size /opt}${goto 330}${fs_free_perc /opt}%${goto 400}${fs_size /opt}
+#
+#
+${font arial black:size=9}OPT$font\
+${goto 120}${fs_type /opt}\
+${goto 200}${fs_used /opt} / ${fs_size /opt}\
+${goto 330}${fs_free_perc /opt}%\
+${goto 400}${fs_size /opt}
 ${fs_bar 4 /opt}$color
-${font arial black:size=9}TMP$font${goto 120}${fs_type /tmp}${goto 200}${fs_used /tmp} / ${fs_size /tmp}${goto 330}${fs_free_perc /tmp}%${goto 400}${fs_size /tmp}
+#
+#
+${font arial black:size=9}TMP$font\
+${goto 120}${fs_type /tmp}\
+${goto 200}${fs_used /tmp} / ${fs_size /tmp}\
+${goto 330}${fs_free_perc /tmp}%\
+${goto 400}${fs_size /tmp}
 ${fs_bar 4 /tmp}$color
-${font arial black:size=9}/mnt/4To$font${goto 120}${fs_type /mnt/4To}${goto 200}${fs_used /mnt/4To} / ${fs_size /mnt/4To}${goto 330}${fs_free_perc /mnt/4To}%${goto 400}${fs_size /mnt/4To}
+#
+#
+${font arial black:size=9}/mnt/4To$font\
+${goto 120}${fs_type /mnt/4To}\
+${goto 200}${fs_used /mnt/4To} / ${fs_size /mnt/4To}\
+${goto 330}${fs_free_perc /mnt/4To}%\
+${goto 400}${fs_size /mnt/4To}
 ${fs_bar 4 /mnt/4To}$color
+#
+#
 # --- SynologyDS216j
 # -> Datas_Accounting
-${if_mounted /mnt/datas/SynologyDS216j/Datas_Accounting}${font arial black:size=9}Datas_Accounting$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Accounting}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Accounting} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Accounting}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Accounting}${font arial black:size=9}\
+Datas_Accounting$font\
+${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Accounting}\
+${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Accounting} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}\
+${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Accounting}%\
+${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Accounting}$color $endif
+#
+#
 ## -> Datas_Documents
-${if_mounted /mnt/datas/SynologyDS216j/Datas_Documents}${font arial black:size=9}Datas_Documents$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Documents}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Documents} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Documents}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Documents}${font arial black:size=9}\
+Datas_Documents$font\
+${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Documents}\
+${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Documents} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}\
+${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Documents}%\
+${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Documents}$color $endif
+#
+#
 ## -> Datas_Multimedia
-${if_mounted /mnt/datas/SynologyDS216j/Datas_Multimedia}${font arial black:size=9}Datas_Multimedia$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Multimedia}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Multimedia} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Multimedia}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Multimedia}${font arial black:size=9}\
+Datas_Multimedia$font\
+${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Multimedia}\
+${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Multimedia} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}\
+${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Multimedia}%\
+${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Multimedia}$color $endif
+#
+#
 ## -> Datas_Photos
-${if_mounted /mnt/datas/SynologyDS216j/Datas_Photos}${font arial black:size=9}Datas_Photos$font${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Photos}${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Photos} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Photos}%${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}
+${if_mounted /mnt/datas/SynologyDS216j/Datas_Photos}${font arial black:size=9}\
+Datas_Photos$font\
+${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Photos}\
+${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Photos} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}\
+${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Photos}%\
+${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Photos}$color $endif
+#
+#
 # --- DNS-323
 # -> /mnt/datas/DNS-323/Multimedia
-${if_mounted /mnt/datas/DNS-323/Multimedia}${font arial black:size=9}Multimedia$font${goto 120}${fs_type /mnt/datas/DNS-323/Multimedia}${goto 200}${fs_used /mnt/datas/DNS-323/Multimedia} / ${fs_size /mnt/datas/DNS-323/Multimedia}${goto 330}${fs_free_perc /mnt/datas/DNS-323/Multimedia}%${goto 400}${fs_size /mnt/datas/DNS-323/Multimedia}
+${if_mounted /mnt/datas/DNS-323/Multimedia}${font arial black:size=9}\
+Multimedia$font\
+${goto 120}${fs_type /mnt/datas/DNS-323/Multimedia}\
+${goto 200}${fs_used /mnt/datas/DNS-323/Multimedia} / ${fs_size /mnt/datas/DNS-323/Multimedia}\
+${goto 330}${fs_free_perc /mnt/datas/DNS-323/Multimedia}%\
+${goto 400}${fs_size /mnt/datas/DNS-323/Multimedia}
 ${fs_bar 4 /mnt/datas/DNS-323/Multimedia}$color $endif
+#
+#
 # -> /mnt/datas/DNS-323/Musique
-${if_mounted /mnt/datas/DNS-323/Musique}${font arial black:size=9}Musique$font${goto 120}${fs_type /mnt/datas/DNS-323/Musique}${goto 200}${fs_used /mnt/datas/DNS-323/Musique} / ${fs_size /mnt/datas/DNS-323/Musique}${goto 330}${fs_free_perc /mnt/datas/DNS-323/Musique}%${goto 400}${fs_size /mnt/datas/DNS-323/Musique}
+${if_mounted /mnt/datas/DNS-323/Musique}${font arial black:size=9}\
+Musique$font\
+${goto 120}${fs_type /mnt/datas/DNS-323/Musique}\
+${goto 200}${fs_used /mnt/datas/DNS-323/Musique} / ${fs_size /mnt/datas/DNS-323/Musique}\
+${goto 330}${fs_free_perc /mnt/datas/DNS-323/Musique}%\
+${goto 400}${fs_size /mnt/datas/DNS-323/Musique}
 ${fs_bar 4 /mnt/datas/DNS-323/Musique}$color $endif
+#
+#
 # -> /mnt/datas/DNS-323/Docs
-${if_mounted /mnt/datas/DNS-323/Docs}${font arial black:size=9}Docs$font${goto 120}${fs_type /mnt/datas/DNS-323/Docs}${goto 200}${fs_used /mnt/datas/DNS-323/Docs} / ${fs_size /mnt/datas/DNS-323/Docs}${goto 330}${fs_free_perc /mnt/datas/DNS-323/Docs}%${goto 400}${fs_size /mnt/datas/DNS-323/Docs}
+${if_mounted /mnt/datas/DNS-323/Docs}${font arial black:size=9}\
+Docs$font\
+${goto 120}${fs_type /mnt/datas/DNS-323/Docs}\
+${goto 200}${fs_used /mnt/datas/DNS-323/Docs} / ${fs_size /mnt/datas/DNS-323/Docs}\
+${goto 330}${fs_free_perc /mnt/datas/DNS-323/Docs}%\
+${goto 400}${fs_size /mnt/datas/DNS-323/Docs}
 ${fs_bar 4 /mnt/datas/DNS-323/Docs}$color $endif
 #
 ]];
