@@ -88,6 +88,22 @@ ${membar 4}
 ${font arial black:size=9}SWAP: $font$swapperc% ${alignr}$swap ${font arial black:size=9}/ $font$swapmax
 ${swapbar 4}
 #
+
+################################################################################
+## TOP processes
+################################################################################
+${font alba:size=16}${color orange}TOP${color}${font arial black:size=11} PROCESSES${color orange} ${hr 2}$color$font
+#${font sans-serif:bold:size=8}${color FF9900}TOP PROCESSES ${hr 2}
+${font arial black:size=10}Name${goto 250}PID${goto 330}CPU%${goto 400}MEM%$font
+${font arial:size=10}${top name 1}${goto 250}${top pid 1}${goto 330}${top cpu 1}${goto 400}${top mem 1}$font
+${font arial:size=10}${top name 2}${goto 250}${top pid 2}${goto 330}${top cpu 2}${goto 400}${top mem 2}$font
+${font arial:size=10}${top name 3}${goto 250}${top pid 3}${goto 330}${top cpu 3}${goto 400}${top mem 3}$font
+${font arial:size=10}${top name 4}${goto 250}${top pid 4}${goto 330}${top cpu 4}${goto 400}${top mem 4}$font
+${font arial:size=10}${top name 5}${goto 250}${top pid 5}${goto 330}${top cpu 5}${goto 400}${top mem 5}$font
+${font arial:size=10}${top name 6}${goto 250}${top pid 6}${goto 330}${top cpu 6}${goto 400}${top mem 6}$font
+${font arial:size=10}${top name 7}${goto 250}${top pid 7}${goto 330}${top cpu 7}${goto 400}${top mem 7}$font
+${font arial:size=10}${top name 8}${goto 250}${top pid 8}${goto 330}${top cpu 8}${goto 400}${top mem 8}$font
+
 ################################################################################
 ## NETWORK informations
 ################################################################################
@@ -149,8 +165,7 @@ ${else}\
 tun0\
 $endif
 #
-################################################################################
-#
+
 ################################################################################
 ## Docker processes
 ################################################################################
@@ -159,22 +174,6 @@ ${font alba:size=16}${color orange}DOCKER${color}${font arial black:size=11} PRO
 ${font Consolas:normal:size=9}\
 ${execpi 10 python3 /home/nicolas/gitRepositories/dotFiles/Conky/scripts/src/docker/docker-informations.py}\
 $font
-#
-################################################################################
-## TOP processes
-################################################################################
-${font alba:size=16}${color orange}TOP${color}${font arial black:size=11} PROCESSES${color orange} ${hr 2}$color$font
-#${font sans-serif:bold:size=8}${color FF9900}TOP PROCESSES ${hr 2}
-${font arial black:size=10}Name${goto 250}PID${goto 330}CPU%${goto 400}MEM%$font
-${font arial:size=10}${top name 1}${goto 250}${top pid 1}${goto 330}${top cpu 1}${goto 400}${top mem 1}$font
-${font arial:size=10}${top name 2}${goto 250}${top pid 2}${goto 330}${top cpu 2}${goto 400}${top mem 2}$font
-${font arial:size=10}${top name 3}${goto 250}${top pid 3}${goto 330}${top cpu 3}${goto 400}${top mem 3}$font
-${font arial:size=10}${top name 4}${goto 250}${top pid 4}${goto 330}${top cpu 4}${goto 400}${top mem 4}$font
-${font arial:size=10}${top name 5}${goto 250}${top pid 5}${goto 330}${top cpu 5}${goto 400}${top mem 5}$font
-${font arial:size=10}${top name 6}${goto 250}${top pid 6}${goto 330}${top cpu 6}${goto 400}${top mem 6}$font
-${font arial:size=10}${top name 7}${goto 250}${top pid 7}${goto 330}${top cpu 7}${goto 400}${top mem 7}$font
-${font arial:size=10}${top name 8}${goto 250}${top pid 8}${goto 330}${top cpu 8}${goto 400}${top mem 8}$font
-
 ################################################################################
 ## DISKS informations
 ################################################################################
