@@ -6,7 +6,6 @@ conky.config = {
 
 	-- # Window specifications
     --------------------------
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	double_buffer = true,
 	minimum_width = 100, minimum_height = 100,
 	--maximum_width = 300,
@@ -16,13 +15,13 @@ conky.config = {
 
     own_window = true,
     own_window_transparent = true,
-    own_window_type = 'sticky',
+    own_window_type = 'normal',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
     own_window_argb_visual = true,
     own_window_class = 'override',
 
     draw_graph_borders = false,
     stippled_borders = 3,
-    border_margin = '9',
 
 	draw_shades = false, --true,
 	draw_outline = false,-- amplifies text if yes
@@ -40,11 +39,6 @@ conky.config = {
     -- # Text settings
     ------------------
 	use_xft = true,
-	--font = 'Eurostile:size=16',
-	--xftfont = 'Eurostile:size=10',
-	--xftalpha = 0.7,
-	--font = 'Sans:size=8',
-    xftfont = 'Eurostile:size=8',
 	font = 'Eurostile:size=11',
 	xftalpha = 0.7,
 
