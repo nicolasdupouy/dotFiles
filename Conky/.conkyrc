@@ -187,7 +187,7 @@ ${font arial black:size=9}VOLUME\
 ${goto 120}TYPE\
 ${goto 200}Used\
 ${goto 330}%FREE\
-${goto 400}SIZE\
+${goto 400}%USED\
 $font
 #
 #
@@ -195,7 +195,7 @@ ${font arial black:size=9}ROOT$font\
 ${goto 120}${fs_type /}\
 ${goto 200}${fs_used /} / ${fs_size /}\
 ${goto 330}${fs_free_perc /}%\
-${goto 400}${fs_size /}
+${goto 400}${fs_used_perc /}
 ${fs_bar 4 /}$color
 #
 #
@@ -203,7 +203,7 @@ ${font arial black:size=9}HOME$font\
 ${goto 120}${fs_type /home}\
 ${goto 200}${fs_used /home} / ${fs_size /home}\
 ${goto 330}${fs_free_perc /home}%\
-${goto 400}${fs_size /home}
+${goto 400}${fs_used_perc /home}
 ${fs_bar 4 /home}$color
 #
 #
@@ -211,7 +211,7 @@ ${font arial black:size=9}OPT$font\
 ${goto 120}${fs_type /opt}\
 ${goto 200}${fs_used /opt} / ${fs_size /opt}\
 ${goto 330}${fs_free_perc /opt}%\
-${goto 400}${fs_size /opt}
+${goto 400}${fs_used_perc /opt}
 ${fs_bar 4 /opt}$color
 #
 #
@@ -219,7 +219,7 @@ ${font arial black:size=9}TMP$font\
 ${goto 120}${fs_type /tmp}\
 ${goto 200}${fs_used /tmp} / ${fs_size /tmp}\
 ${goto 330}${fs_free_perc /tmp}%\
-${goto 400}${fs_size /tmp}
+${goto 400}${fs_used_perc /tmp}
 ${fs_bar 4 /tmp}$color
 #
 #
@@ -227,7 +227,7 @@ ${font arial black:size=9}/mnt/4To$font\
 ${goto 120}${fs_type /mnt/4To}\
 ${goto 200}${fs_used /mnt/4To} / ${fs_size /mnt/4To}\
 ${goto 330}${fs_free_perc /mnt/4To}%\
-${goto 400}${fs_size /mnt/4To}
+${goto 400}${fs_used_perc /mnt/4To}
 ${fs_bar 4 /mnt/4To}$color
 #
 #
@@ -238,7 +238,7 @@ Datas_Accounting$font\
 ${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Accounting}\
 ${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Accounting} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}\
 ${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Accounting}%\
-${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Accounting}
+${goto 400}${fs_used_perc /mnt/datas/SynologyDS216j/Datas_Accounting}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Accounting}$color $endif
 #
 #
@@ -248,7 +248,7 @@ Datas_Documents$font\
 ${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Documents}\
 ${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Documents} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}\
 ${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Documents}%\
-${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Documents}
+${goto 400}${fs_used_perc /mnt/datas/SynologyDS216j/Datas_Documents}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Documents}$color $endif
 #
 #
@@ -258,7 +258,7 @@ Datas_Multimedia$font\
 ${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Multimedia}\
 ${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Multimedia} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}\
 ${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Multimedia}%\
-${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Multimedia}
+${goto 400}${fs_used_perc /mnt/datas/SynologyDS216j/Datas_Multimedia}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Multimedia}$color $endif
 #
 #
@@ -268,7 +268,7 @@ Datas_Photos$font\
 ${goto 120}${fs_type /mnt/datas/SynologyDS216j/Datas_Photos}\
 ${goto 200}${fs_used /mnt/datas/SynologyDS216j/Datas_Photos} / ${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}\
 ${goto 330}${fs_free_perc /mnt/datas/SynologyDS216j/Datas_Photos}%\
-${goto 400}${fs_size /mnt/datas/SynologyDS216j/Datas_Photos}
+${goto 400}${fs_used_perc /mnt/datas/SynologyDS216j/Datas_Photos}
 ${fs_bar 4 /mnt/datas/SynologyDS216j/Datas_Photos}$color $endif
 #
 #
@@ -279,7 +279,7 @@ Multimedia$font\
 ${goto 120}${fs_type /mnt/datas/DNS-323/Multimedia}\
 ${goto 200}${fs_used /mnt/datas/DNS-323/Multimedia} / ${fs_size /mnt/datas/DNS-323/Multimedia}\
 ${goto 330}${fs_free_perc /mnt/datas/DNS-323/Multimedia}%\
-${goto 400}${fs_size /mnt/datas/DNS-323/Multimedia}
+${goto 400}${fs_used_perc /mnt/datas/DNS-323/Multimedia}
 ${fs_bar 4 /mnt/datas/DNS-323/Multimedia}$color $endif
 #
 #
@@ -289,7 +289,7 @@ Musique$font\
 ${goto 120}${fs_type /mnt/datas/DNS-323/Musique}\
 ${goto 200}${fs_used /mnt/datas/DNS-323/Musique} / ${fs_size /mnt/datas/DNS-323/Musique}\
 ${goto 330}${fs_free_perc /mnt/datas/DNS-323/Musique}%\
-${goto 400}${fs_size /mnt/datas/DNS-323/Musique}
+${goto 400}${fs_used_perc /mnt/datas/DNS-323/Musique}
 ${fs_bar 4 /mnt/datas/DNS-323/Musique}$color $endif
 #
 #
@@ -299,7 +299,7 @@ Docs$font\
 ${goto 120}${fs_type /mnt/datas/DNS-323/Docs}\
 ${goto 200}${fs_used /mnt/datas/DNS-323/Docs} / ${fs_size /mnt/datas/DNS-323/Docs}\
 ${goto 330}${fs_free_perc /mnt/datas/DNS-323/Docs}%\
-${goto 400}${fs_size /mnt/datas/DNS-323/Docs}
+${goto 400}${fs_used_perc /mnt/datas/DNS-323/Docs}
 ${fs_bar 4 /mnt/datas/DNS-323/Docs}$color $endif
 #
 ]];
