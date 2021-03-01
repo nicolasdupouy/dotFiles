@@ -215,14 +215,6 @@ ${goto 400}${fs_used_perc /opt}%
 ${fs_bar 4 /opt}$color
 #
 #
-${font arial black:size=9}TMP$font\
-${goto 120}${fs_type /tmp}\
-${goto 200}${fs_used /tmp} / ${fs_size /tmp}\
-${goto 330}${fs_free_perc /tmp}%\
-${goto 400}${fs_used_perc /tmp}%
-${fs_bar 4 /tmp}$color
-#
-#
 ${font arial black:size=9}/mnt/4To$font\
 ${goto 120}${fs_type /mnt/4To}\
 ${goto 200}${fs_used /mnt/4To} / ${fs_size /mnt/4To}\
