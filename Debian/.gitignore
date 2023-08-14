@@ -1,0 +1,6 @@
+# Conky
+convert.lua
+Conky/USELESS/*
+
+# Python
+__pycache__/
