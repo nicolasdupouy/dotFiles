@@ -30,3 +30,6 @@ vim.keymap.set('n', '<Leader><Up>', ':wincmd k<CR>')
 vim.keymap.set('n', '<Leader><Down>', ':wincmd j<CR>')
 vim.keymap.set('n', '<Leader><Left>', ':wincmd h<CR>')
 vim.keymap.set('n', '<Leader><Right>', ':wincmd l<CR>')
+
+-- nvim-tree
+vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>')

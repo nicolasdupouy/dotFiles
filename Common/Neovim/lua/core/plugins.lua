@@ -12,6 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- nvim-tree
+  'nvim-tree/nvim-tree.lua',
+  'nvim-tree/nvim-web-devicons',
+  -- ## Theme
   {
     "folke/tokyonight.nvim",
     lazy = false,
