@@ -3,7 +3,12 @@
 -- * https://neovim.io/doc/user/quickref.html#option-list
 
 -- Behaviour options
+vim.opt.mouse = 'a'
 vim.opt.autoread = true         -- autom. read file when changed outside of Vim
+
+-- split options
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Search options
 vim.opt.ignorecase = true       -- ignore case in search patterns
