@@ -25,11 +25,11 @@ vim.keymap.set('n', '<C-Up>', ':wincmd k<CR>')              -- Navigate to the b
 vim.keymap.set('n', '<C-Down>', ':wincmd j<CR>')            -- Navigate to the buffer which is down
 vim.keymap.set('n', '<C-Left>', ':wincmd h<CR>')            -- Navigate to the buffer at the right
 vim.keymap.set('n', '<C-Right>', ':wincmd l<CR>')           -- Navigate to the buffer at the left
-
-vim.keymap.set('n', '<Leader><Up>', ':wincmd k<CR>')
-vim.keymap.set('n', '<Leader><Down>', ':wincmd j<CR>')
-vim.keymap.set('n', '<Leader><Left>', ':wincmd h<CR>')
-vim.keymap.set('n', '<Leader><Right>', ':wincmd l<CR>')
+-- With vim-tmux-navigator
+-- <ctrl-h> => Left
+-- <ctrl-j> => Down
+-- <ctrl-k> => Up
+-- <ctrl-l> => Right
 
 -- nvim-tree
 vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>')

@@ -24,9 +24,9 @@ vim.opt.breakindent = true      -- wrapped line repeats indent
 -- -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 -- -- Tabs
---vim.opt.tabstop = 2             -- number of spaces that <Tab> in file uses
+vim.opt.tabstop = 4             -- number of spaces that <Tab> in file uses
 vim.opt.shiftround = true       -- round indent to multiple of shiftwidth
---vim.opt.shiftwidth = 2          -- number of spaces to use for (auto)indent step
+vim.opt.shiftwidth = 4          -- number of spaces to use for (auto)indent step
 vim.opt.expandtab = true        -- use spaces when <Tab> is inserted
 -- --Line numbers
 vim.opt.number = true
