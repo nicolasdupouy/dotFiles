@@ -15,16 +15,18 @@ local plugins = {
     -- Window related plugins
     'christoomey/vim-tmux-navigator',
     'szw/vim-maximizer',
-    -- nvim-tree
+    -- File explorer
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
-    -- ## Theme
+    -- Theme
     {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
         opts = {},
-    }
+    },
+    -- Status bar
+    'nvim-lualine/lualine.nvim'
 }
 
 local opts = {}
