@@ -35,3 +35,9 @@ ln -sf $PWD/Common/Neovim/init.lua ~/.config/nvim/init.lua
 ```
 
 As I use [lazy.nvim](https://github.com/folke/lazy.nvim), it will downloaded and install the plugins the first time you launch `nvim`.
+
+**NB:** In order to use the live grep, [ripgrep](https://github.com/BurntSushi/ripgrep) must be installed:
+```shell
+arch -arm64 brew install ripgrep  (under MacOS)
+sudo pkg install ripgrep          (under FreeBSD)
+```

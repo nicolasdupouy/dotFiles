@@ -26,7 +26,14 @@ local plugins = {
         opts = {},
     },
     -- Status bar
-    'nvim-lualine/lualine.nvim'
+    'nvim-lualine/lualine.nvim',
+    -- Telescope
+    'nvim-lua/plenary.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.2'
+    }
 }
 
 local opts = {}
