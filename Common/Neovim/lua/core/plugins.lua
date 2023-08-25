@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     -- Window related plugins
     'christoomey/vim-tmux-navigator',
+    'szw/vim-maximizer',
     -- nvim-tree
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',

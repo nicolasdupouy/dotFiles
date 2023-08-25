@@ -9,16 +9,16 @@ vim.keymap.set('n', '<leader>+', '<C-a>')                   -- Increment selecte
 vim.keymap.set('n', '<leader>-', '<C-x>')                   -- Decrement selected number
 
 -- Split
-vim.keymap.set('n', '<Leader>sv', '<C-w>v')                 -- Split vertically
-vim.keymap.set('n', '<Leader>sh', '<C-w>s')                 -- Split horizontally
-vim.keymap.set('n', '<Leader>se', '<C-w>=')                 -- Make split windows equals width
-vim.keymap.set('n', '<Leader>sx', ':close<CR>')             -- Close current split window
+vim.keymap.set('n', '<leader>sv', '<C-w>v')                 -- Split vertically
+vim.keymap.set('n', '<leader>sh', '<C-w>s')                 -- Split horizontally
+vim.keymap.set('n', '<leader>se', '<C-w>=')                 -- Make split windows equals width
+vim.keymap.set('n', '<leader>sx', ':close<CR>')             -- Close current split window
 
 -- Tabs
-vim.keymap.set('n', '<Leader>to', ':tabnew<CR>')            -- Open new tab
-vim.keymap.set('n', '<Leader>tx', ':tabclose<CR>')            -- Open new tab
-vim.keymap.set('n', '<Leader>tn', ':tabn<CR>')            -- Open new tab
-vim.keymap.set('n', '<Leader>tp', ':tabp<CR>')            -- Open new tab
+vim.keymap.set('n', '<leader>to', ':tabnew<CR>')            -- Open new tab
+vim.keymap.set('n', '<leader>tx', ':tabclose<CR>')            -- Open new tab
+vim.keymap.set('n', '<leader>tn', ':tabn<CR>')            -- Open new tab
+vim.keymap.set('n', '<leader>tp', ':tabp<CR>')            -- Open new tab
 
 -- Navigate vim panes better
 vim.keymap.set('n', '<C-Up>', ':wincmd k<CR>')              -- Navigate to the buffer which is up
@@ -31,5 +31,9 @@ vim.keymap.set('n', '<C-Right>', ':wincmd l<CR>')           -- Navigate to the b
 -- <ctrl-k> => Up
 -- <ctrl-l> => Right
 
+-- Plugins keymaps
+-- vim-maximize
+vim.keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>')
+
 -- nvim-tree
-vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>')
