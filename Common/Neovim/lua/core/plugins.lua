@@ -35,7 +35,6 @@ local plugins = {
         tag = '0.1.2'
     },
     -- Completion
-    'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -46,6 +45,13 @@ local plugins = {
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     "rafamadriz/friendly-snippets",
+
+    -- Managing and installing LSP servers
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+
+    -- Configure LSP servers
+    'neovim/nvim-lspconfig',
 }
 
 local opts = {}
