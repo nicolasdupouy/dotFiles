@@ -12,12 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    -- Window related plugins
-    'christoomey/vim-tmux-navigator',
-    'szw/vim-maximizer',
-    -- File explorer
-    'nvim-tree/nvim-tree.lua',
-    'nvim-tree/nvim-web-devicons',
+    -- # DISPLAY
     -- Theme
     {
         "folke/tokyonight.nvim",
@@ -27,6 +22,31 @@ local plugins = {
     },
     -- Status bar
     'nvim-lualine/lualine.nvim',
+
+    -- # SYNTAX
+    -- Completion
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    -- Snippets
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+    "rafamadriz/friendly-snippets",
+    -- Managing and installing LSP servers
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    -- Configure LSP servers
+    'neovim/nvim-lspconfig',
+
+    -- # TOOLS
+    -- Window related plugins
+    'christoomey/vim-tmux-navigator',
+    'szw/vim-maximizer',
+    -- File explorer
+    'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-web-devicons',
     -- Telescope
     'nvim-lua/plenary.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -34,24 +54,7 @@ local plugins = {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2'
     },
-    -- Completion
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/nvim-cmp',
 
-    -- Snippets
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
-    "rafamadriz/friendly-snippets",
-
-    -- Managing and installing LSP servers
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-
-    -- Configure LSP servers
-    'neovim/nvim-lspconfig',
 }
 
 local opts = {}

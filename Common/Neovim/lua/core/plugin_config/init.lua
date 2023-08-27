@@ -1,6 +1,11 @@
-require("core.plugin_config.lsp.mason")
-require("core.plugin_config.completion")
-require("core.plugin_config.lualine")
-require("core.plugin_config.nvim-tree")
-require("core.plugin_config.telescope")
-require("core.plugin_config.tokyonight")
+-- Display
+require("core.plugin_config.display.lualine")
+require("core.plugin_config.display.tokyonight")
+
+-- Syntax
+require("core.plugin_config.syntax.lsp.mason")
+require("core.plugin_config.syntax.completion")
+
+-- Tools
+require("core.plugin_config.tools.nvim-tree")
+require("core.plugin_config.tools.telescope")
