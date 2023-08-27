@@ -38,6 +38,7 @@ local plugins = {
     -- Configure LSP servers
     'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',
+    'onsails/lspkind.nvim',
 
     -- # TOOLS
     -- Window related plugins

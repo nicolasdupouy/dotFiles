@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local lspkind = require('lspkind')
 
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
@@ -19,5 +20,11 @@ cmp.setup({
     { name = 'luasnip' },       -- Snippets
     { name = 'buffer' },        -- Text within the current buffer
     { name = 'path' },          -- File system paths
-  })
+  }),
+  formatting = {
+      format = lspkind.cmp_format({
+        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        ellipsis_char = '...'
+      }),
+  },
 })
