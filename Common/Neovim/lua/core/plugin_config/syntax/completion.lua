@@ -15,7 +15,7 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp' },      -- LSP
     { name = 'luasnip' },       -- Snippets
     { name = 'buffer' },        -- Text within the current buffer
     { name = 'path' },          -- File system paths

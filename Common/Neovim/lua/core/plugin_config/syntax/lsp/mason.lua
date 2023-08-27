@@ -14,7 +14,7 @@ require("mason-lspconfig").setup({
         "kotlin_language_server",                                                           -- Kotlin
         "jedi_language_server", "pyre", "pyright", "pylyzer", "sourcery", "ruff_lsp",       -- Python
         "pylsp",                                                                            -- Python (docs)
-        "sqlls", "sqls",                                                                    -- SQL
+        "sqlls",                                                                            -- SQL
         -- Description languages
         "marksman", "prosemd_lsp", "remark_ls", "vale_ls", "zk",                            -- Markdown
         "taplo",                                                                            -- TOML

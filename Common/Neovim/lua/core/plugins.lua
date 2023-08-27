@@ -25,7 +25,6 @@ local plugins = {
 
     -- # SYNTAX
     -- Completion
-    'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/nvim-cmp',
@@ -38,6 +37,7 @@ local plugins = {
     'williamboman/mason-lspconfig.nvim',
     -- Configure LSP servers
     'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
 
     -- # TOOLS
     -- Window related plugins

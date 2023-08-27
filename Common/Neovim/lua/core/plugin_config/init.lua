@@ -3,6 +3,7 @@ require("core.plugin_config.display.lualine")
 require("core.plugin_config.display.tokyonight")
 
 -- Syntax
+require("core.plugin_config.syntax.lsp.lspconfig")
 require("core.plugin_config.syntax.lsp.mason")
 require("core.plugin_config.syntax.completion")
 
