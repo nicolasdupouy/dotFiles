@@ -53,7 +53,8 @@ local plugins = {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2'
     },
-
+    -- Git integration
+    'lewis6991/gitsigns.nvim'
 }
 
 local opts = {}
