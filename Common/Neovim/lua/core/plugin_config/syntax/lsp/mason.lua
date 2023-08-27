@@ -8,8 +8,7 @@ require("mason-lspconfig").setup({
         "lua_ls",                                                                           -- Lua
         "rust_analyzer",                                                                    -- Rust
         "golangci_lint_ls", "gopls",                                                        -- Go
-        "hls",                                                                              -- Haskell
-        "jdtls", "java_language_server",                                                    -- Java
+        "jdtls",                                                                            -- Java
         "quick_lint_js", "tsserver", "vtsls",                                               -- JavaScript
         "tsserver", "vtsls",                                                                -- TypeScript
         "kotlin_language_server",                                                           -- Kotlin
