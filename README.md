@@ -5,9 +5,14 @@ git clone git@github.com:nicolasdupouy/dotFiles.git
 ```
 
 ## Tmux
+### Link the configuration file
 ```shell
 ln -s $PWD/Common/Tmux/.tmux.conf ~/.tmux.conf
 ```
+
+### Fetch and source the plugins
+Launch `tmux` and hit `prefix + I` (`Ctrl-q + I`) to fetch the plugin and source it. You should now be able to use the plugin.
+
 
 ## Neovim
 ### Configuration directory
