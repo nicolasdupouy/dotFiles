@@ -35,8 +35,9 @@ The datas should be stored in `~/.local/share/nvim/`. To check, type (in `nvim`)
 Use the LUA configuration scripts presents in the repository:
 
 ```shell
+mkdir ~/.config/nvim
 ln -s $PWD/Common/Neovim/lua/ ~/.config/nvim/lua
-ln -sf $PWD/Common/Neovim/init.lua ~/.config/nvim/init.lua
+ln -s $PWD/Common/Neovim/init.lua ~/.config/nvim/init.lua
 ```
 
 As I use [lazy.nvim](https://github.com/folke/lazy.nvim), it will downloaded and install the plugins the first time you launch `nvim`.
