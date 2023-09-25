@@ -47,3 +47,19 @@ As I use [lazy.nvim](https://github.com/folke/lazy.nvim), it will downloaded and
 arch -arm64 brew install ripgrep  (under MacOS)
 sudo pkg install ripgrep          (under FreeBSD)
 ```
+
+#### Troubleshoot
+##### Fix: (WARNING: No Python executable found that can `import neovim`. Using the first available executable for diagnostics.)
+To fit it, install [Pynvim](https://github.com/neovim/pynvim) which implements support for python plugins in nvim.
+
+###### On MacOS
+```shell
+pip3 install pynvim
+```
+
+###### On FreeBSD
+Install PIP: `sudo pkg install py39-pip`
+
+```shell
+pip install pynvim
+```
