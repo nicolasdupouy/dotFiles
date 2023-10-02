@@ -3,22 +3,22 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
         -- Programming languages
-        "clangd",                                                                           -- C / C++
+        ---"clangd",                                                                           -- C / C++
         "bashls", "pkgbuild_language_server",                                               -- Bash
-        "lua_ls",                                                                           -- Lua
-        "rust_analyzer",                                                                    -- Rust
+        --"lua_ls",                                                                           -- Lua
+        --"rust_analyzer",                                                                    -- Rust
         "golangci_lint_ls", "gopls",                                                        -- Go
-        "jdtls",                                                                            -- Java
-        "quick_lint_js", "tsserver", "vtsls",                                               -- JavaScript
-        "tsserver", "vtsls",                                                                -- TypeScript
+        --"jdtls",                                                                            -- Java
+        --"quick_lint_js", "tsserver", "vtsls",                                               -- JavaScript
+        --"tsserver", "vtsls",                                                                -- TypeScript
         "kotlin_language_server",                                                           -- Kotlin
-        "jedi_language_server", "pyre", "pyright", "pylyzer", "sourcery", "ruff_lsp",       -- Python
-        "pylsp",                                                                            -- Python (docs)
+        --"jedi_language_server", "pyre", "pyright", "pylyzer", "sourcery", "ruff_lsp",       -- Python
+        --"pylsp",                                                                            -- Python (docs)
         "sqlls",                                                                            -- SQL
         -- Description languages
-        "marksman", "prosemd_lsp", "remark_ls", "vale_ls", "zk",                            -- Markdown
-        "taplo",                                                                            -- TOML
-        "lemminx",                                                                          -- XML
+        --"marksman", "prosemd_lsp", "remark_ls", "vale_ls", "zk",                            -- Markdown
+        --"taplo",                                                                            -- TOML
+        --"lemminx",                                                                          -- XML
         "yamlls",                                                                           -- YAML
         -- Web
         "html",                                                                             -- HTML
@@ -27,8 +27,9 @@ require("mason-lspconfig").setup({
         -- Infra
         "dockerls",                                                                         -- Docker
         "docker_compose_language_service",                                                  -- Docker Compose
-        "terraformls", "tflint",                                                            -- Terraform
-        "helm_ls",                                                                          -- Helm
+        --"terraformls", "tflint",                                                            -- Terraform
+        --"ansible-language-server", "ansible-lint",                                          -- Ansible
+        --"helm_ls",                                                                          -- Helm
         -- Tools
         "gradle_ls",                                                                        -- Gradle
     }
