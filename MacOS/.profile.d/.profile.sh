@@ -28,6 +28,9 @@ echo "Profile directory: $PROFILE_DIRECTORY"
 
 source ${PROFILE_DIRECTORY}/.profile-tools-brew.sh
 source ${PROFILE_DIRECTORY}/.profile-bash.sh
+source ${PROFILE_DIRECTORY}/JVM/.profile-languages-JVM.sh
+source ${PROFILE_DIRECTORY}/JVM/.profile-tools-JVM.sh
+source ${PROFILE_DIRECTORY}/JVM/.profile-aliases-JVM.sh
 
 # For Kubernetes => Minikube => hyperkit (enable qcow)
 # OPAM (https://opam.ocaml.org/) is the OCaml Package Manager
@@ -38,39 +41,13 @@ test -r /Users/nicolas/.opam/opam-init/init.sh && . /Users/nicolas/.opam/opam-in
 alias ls='lsd'
 alias ll='lsd -lFtr'
 alias la='lsd -alFtr'
-alias nicolas_list_jdks='/usr/libexec/java_home --verbose'
 alias nicolas_npx_envinfo='npx envinfo --preset jest'
 alias nicolas_sha256sum='shasum -a 256 $1 --check sha256sums.txt 2>/dev/null | grep $1'
 alias wireshark_as_root='sudo /Applications/InstalledApps/Security/Wireshark.app/Contents/MacOS/Wireshark &'
 
-# [JDK]     --------------------------------------------
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
-# => MANAGED BY 'jenv'
-
-# [jenv]
-# To enable shims and autocompletion:
-eval "$(jenv init -)"
-
-# To use Homebrew's directories rather than ~/.jenv add to your profile:
-#export JENV_ROOT=/usr/local/opt/jenv
-
-# [Java Decompiler]
-alias nicolas_java_decompiler='java -jar /Applications/InstalledApps/Development/jd-gui-1.6.6.jar'
-alias nicolas_jd=nicolas_java_decompiler
-
 # [Go]
 export GO_DIRECTORY='/usr/local/go'
 export PATH=$GO_DIRECTORY/bin:$PATH
-
-# [Maven]
-MVN_HOME=/Applications/InstalledApps/Development/apache-maven-3.8.4
-export PATH=$MVN_HOME/bin:$PATH
-
-# [Gradle]
-GRADLE_HOME=/Applications/InstalledApps/Development/gradle-7.5.1
-export PATH=$GRADLE_HOME/bin:$PATH
 
 # Rbenv (for Ruby)
 eval "$(rbenv init - zsh)"
