@@ -26,29 +26,12 @@ function find_profile_directory() {
 PROFILE_DIRECTORY=$(find_profile_directory)
 echo "Profile directory: $PROFILE_DIRECTORY"
 
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
-# Bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+source ${PROFILE_DIRECTORY}/.profile-bash.sh
 
 # For Kubernetes => Minikube => hyperkit (enable qcow)
 # OPAM (https://opam.ocaml.org/) is the OCaml Package Manager
 # opam configuration
 test -r /Users/nicolas/.opam/opam-init/init.sh && . /Users/nicolas/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-
-# Powerline shell
-function _update_ps1() {
-    PS1=$(powerline-shell $?)
-}
-#export PS2="$(powerline shell left)"
-#THEME_PROMPT_SEPARATOR=""
-#THEME_PROMPT_TERMINAL=" » "
-
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
 
 # Aliases
 alias ls='lsd'
