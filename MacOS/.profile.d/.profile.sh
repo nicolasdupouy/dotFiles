@@ -26,6 +26,7 @@ function find_profile_directory() {
 PROFILE_DIRECTORY=$(find_profile_directory)
 echo "Profile directory: $PROFILE_DIRECTORY"
 
+source ${PROFILE_DIRECTORY}/.profile-tools-brew.sh
 source ${PROFILE_DIRECTORY}/.profile-bash.sh
 
 # For Kubernetes => Minikube => hyperkit (enable qcow)
@@ -71,9 +72,6 @@ export PATH=$MVN_HOME/bin:$PATH
 GRADLE_HOME=/Applications/InstalledApps/Development/gradle-7.5.1
 export PATH=$GRADLE_HOME/bin:$PATH
 
-# [BREW]    --------------------------------------------
-# Load Brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
 # Rbenv (for Ruby)
 eval "$(rbenv init - zsh)"
 # Jekyll
