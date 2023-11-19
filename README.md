@@ -4,6 +4,19 @@ Clone the repository:
 git clone git@github.com:nicolasdupouy/dotFiles.git
 ```
 
+## Profile
+### MacOS
+#### Link the configuration file
+```shell
+ln -s $PWD/MacOS/.profile.d/.profile.sh ~/.profile.nicolas.sh
+echo "source ~/.profile.nicolas.sh" >> ~/.bashrc
+echo "source ~/.profile.nicolas.sh" >> ~/.bash_profile
+```
+
+### FreeBSD
+#### Link the configuration file
+**TODO**
+
 ## Tmux
 ### Link the configuration file
 ```shell
