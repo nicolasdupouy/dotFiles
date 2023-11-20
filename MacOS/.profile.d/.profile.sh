@@ -35,11 +35,7 @@ source ${PROFILE_DIRECTORY}/.profile-languages-Go.sh
 source ${PROFILE_DIRECTORY}/.profile-languages-Ruby.sh
 source ${PROFILE_DIRECTORY}/.profile-languages-Node.js.sh
 source ${PROFILE_DIRECTORY}/.profile-aliases-Node.js.sh
-
-# For Kubernetes => Minikube => hyperkit (enable qcow)
-# OPAM (https://opam.ocaml.org/) is the OCaml Package Manager
-# opam configuration
-test -r /Users/nicolas/.opam/opam-init/init.sh && . /Users/nicolas/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+source ${PROFILE_DIRECTORY}/.profile-tools-infrastructure.sh
 
 # Aliases
 alias ls='lsd'
@@ -56,17 +52,6 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
-# [Ansible (Python PIP directory]
-export PYTHON_3_DIRECTORY='~/Library/Python/3.11'
-export PATH=$PATH:$PYTHON_3_DIRECTORY/bin
-#alias ansible-playbook='$PYTHON_3_DIRECTORY/bin/ansible-playbook'
-
-# [Kubernetes]
-alias k='kubectl'
-# Bash completion for "k" as "kubecl"
-complete -o default -F __start_kubectl k
-
 
 # [ FOR Linkcy ]
 export ENT_USERNAME=linkcy
@@ -90,7 +75,5 @@ alias SSH_connect_Local_Chicago='ssh -i ~/.ssh/id_rsa_nicolas_Chicago nicolas@Ch
 alias SSH_connect_Local_LosAngeles='ssh -i ~/.ssh/id_rsa_nicolas_LosAngeles nicolas@LosAngeles'
 alias SSH_connect_Local_NewYork='ssh -i ~/.ssh/id_rsa_nicolas_NewYork nicolas@NewYork'
 # Uranus TODO (à renommer ?)
-
-# ~/.ssh/id_rsa_nicolas_Jupiter
 
 alias nicolas_weather='curl -sL wttr.in/Suresnes'
