@@ -31,6 +31,7 @@ source ${PROFILE_DIRECTORY}/.profile-bash.sh
 source ${PROFILE_DIRECTORY}/JVM/.profile-languages-JVM.sh
 source ${PROFILE_DIRECTORY}/JVM/.profile-tools-JVM.sh
 source ${PROFILE_DIRECTORY}/JVM/.profile-aliases-JVM.sh
+source ${PROFILE_DIRECTORY}/.profile-languages-Go.sh
 
 # For Kubernetes => Minikube => hyperkit (enable qcow)
 # OPAM (https://opam.ocaml.org/) is the OCaml Package Manager
@@ -44,10 +45,6 @@ alias la='lsd -alFtr'
 alias nicolas_npx_envinfo='npx envinfo --preset jest'
 alias nicolas_sha256sum='shasum -a 256 $1 --check sha256sums.txt 2>/dev/null | grep $1'
 alias wireshark_as_root='sudo /Applications/InstalledApps/Security/Wireshark.app/Contents/MacOS/Wireshark &'
-
-# [Go]
-export GO_DIRECTORY='/usr/local/go'
-export PATH=$GO_DIRECTORY/bin:$PATH
 
 # Rbenv (for Ruby)
 eval "$(rbenv init - zsh)"
