@@ -36,6 +36,7 @@ source ${PROFILE_DIRECTORY}/.profile-languages-Ruby.sh
 source ${PROFILE_DIRECTORY}/.profile-languages-Node.js.sh
 source ${PROFILE_DIRECTORY}/.profile-aliases-Node.js.sh
 source ${PROFILE_DIRECTORY}/.profile-tools-infrastructure.sh
+source ${PROFILE_DIRECTORY}/.profile-Android.sh
 
 # Aliases
 alias ls='lsd'
@@ -44,20 +45,10 @@ alias la='lsd -alFtr'
 alias nicolas_sha256sum='shasum -a 256 $1 --check sha256sums.txt 2>/dev/null | grep $1'
 alias wireshark_as_root='sudo /Applications/InstalledApps/Security/Wireshark.app/Contents/MacOS/Wireshark &'
 
-# [ANDROID] --------------------------------------------
-export ANDROID_HOME='/Users/nicolas/Library/Android/sdk'
-#export ANDROID_HOME=~/Library/Android/sdk
-export ANDROID_SDK_ROOT=~/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
 # [ FOR Linkcy ]
 export ENT_USERNAME=linkcy
 export ENT_TOKEN=1xGY32LUaBxV8RvUfA55
-
-
 
 alias nicolas_serve_redoc_partner='redoc-cli serve http://localhost:8080/v3/api-docs/partner  --ssr --watch -p 8091'
 alias nicolas_serve_redoc_internal='redoc-cli serve http://localhost:8080/v3/api-docs/internal  --ssr --watch -p 8092'
