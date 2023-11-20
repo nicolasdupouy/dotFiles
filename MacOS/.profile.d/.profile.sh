@@ -33,6 +33,8 @@ source ${PROFILE_DIRECTORY}/JVM/.profile-tools-JVM.sh
 source ${PROFILE_DIRECTORY}/JVM/.profile-aliases-JVM.sh
 source ${PROFILE_DIRECTORY}/.profile-languages-Go.sh
 source ${PROFILE_DIRECTORY}/.profile-languages-Ruby.sh
+source ${PROFILE_DIRECTORY}/.profile-languages-Node.js.sh
+source ${PROFILE_DIRECTORY}/.profile-aliases-Node.js.sh
 
 # For Kubernetes => Minikube => hyperkit (enable qcow)
 # OPAM (https://opam.ocaml.org/) is the OCaml Package Manager
@@ -43,13 +45,8 @@ test -r /Users/nicolas/.opam/opam-init/init.sh && . /Users/nicolas/.opam/opam-in
 alias ls='lsd'
 alias ll='lsd -lFtr'
 alias la='lsd -alFtr'
-alias nicolas_npx_envinfo='npx envinfo --preset jest'
 alias nicolas_sha256sum='shasum -a 256 $1 --check sha256sums.txt 2>/dev/null | grep $1'
 alias wireshark_as_root='sudo /Applications/InstalledApps/Security/Wireshark.app/Contents/MacOS/Wireshark &'
-
-# [NVM]    ---------------------------------------------
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 # [ANDROID] --------------------------------------------
 export ANDROID_HOME='/Users/nicolas/Library/Android/sdk'
