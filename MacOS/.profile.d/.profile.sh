@@ -26,16 +26,13 @@ function find_profile_directory() {
 PROFILE_DIRECTORY=$(find_profile_directory)
 echo "Profile directory: $PROFILE_DIRECTORY"
 
-source ${PROFILE_DIRECTORY}/.profile-tools-brew.sh
+source ${PROFILE_DIRECTORY}/.profile-brew.sh
 source ${PROFILE_DIRECTORY}/.profile-bash.sh
-source ${PROFILE_DIRECTORY}/JVM/.profile-languages-JVM.sh
-source ${PROFILE_DIRECTORY}/JVM/.profile-tools-JVM.sh
-source ${PROFILE_DIRECTORY}/JVM/.profile-aliases-JVM.sh
-source ${PROFILE_DIRECTORY}/.profile-languages-Go.sh
-source ${PROFILE_DIRECTORY}/.profile-languages-Ruby.sh
-source ${PROFILE_DIRECTORY}/.profile-languages-Node.js.sh
-source ${PROFILE_DIRECTORY}/.profile-aliases-Node.js.sh
-source ${PROFILE_DIRECTORY}/.profile-tools-infrastructure.sh
+source ${PROFILE_DIRECTORY}/.profile-JVM.sh
+source ${PROFILE_DIRECTORY}/.profile-Go.sh
+source ${PROFILE_DIRECTORY}/.profile-Ruby.sh
+source ${PROFILE_DIRECTORY}/.profile-Node.js.sh
+source ${PROFILE_DIRECTORY}/.profile-Infrastructure.sh
 source ${PROFILE_DIRECTORY}/.profile-Android.sh
 
 # Aliases
