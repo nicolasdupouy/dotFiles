@@ -34,14 +34,13 @@ source ${PROFILE_DIRECTORY}/.profile-Ruby.sh
 source ${PROFILE_DIRECTORY}/.profile-Node.js.sh
 source ${PROFILE_DIRECTORY}/.profile-Infrastructure.sh
 source ${PROFILE_DIRECTORY}/.profile-Android.sh
+source ${PROFILE_DIRECTORY}/.profile-Security.sh
 source ${PROFILE_DIRECTORY}/.profile-Work.sh
 
 # Aliases
 alias ls='lsd'
 alias ll='lsd -lFtr'
 alias la='lsd -alFtr'
-alias nicolas_sha256sum='shasum -a 256 $1 --check sha256sums.txt 2>/dev/null | grep $1'
-alias wireshark_as_root='sudo /Applications/InstalledApps/Security/Wireshark.app/Contents/MacOS/Wireshark &'
 
 alias SSH_connect_Linkcy_Paynovate_Proxy='ssh -i ~/.ssh/paynovateProxy.pem admin@13.39.147.239'
 alias SSH_connect_Linkcy_Lotus='ssh -i ~/.ssh/lotus.pem admin@15.188.54.100'
