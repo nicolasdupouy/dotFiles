@@ -36,11 +36,10 @@ source ${PROFILE_DIRECTORY}/.profile-Infrastructure.sh
 source ${PROFILE_DIRECTORY}/.profile-Android.sh
 source ${PROFILE_DIRECTORY}/.profile-Security.sh
 source ${PROFILE_DIRECTORY}/.profile-SSH.sh
+source ${PROFILE_DIRECTORY}/.profile-Misc.sh
 source ${PROFILE_DIRECTORY}/.profile-Work.sh
 
 # Aliases
 alias ls='lsd'
 alias ll='lsd -lFtr'
 alias la='lsd -alFtr'
-
-alias nicolas_weather='curl -sL wttr.in/Suresnes'
