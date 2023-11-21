@@ -5,4 +5,4 @@ source $(brew --prefix nvm)/nvm.sh
 
 
 # -- Aliases
-alias alias_nicolas_npx_envinfo='npx envinfo --preset jest'
+alias alias_Nodejs_npx_envinfo='npx envinfo --preset jest'

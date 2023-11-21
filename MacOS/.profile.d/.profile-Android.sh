@@ -1,3 +1,4 @@
+# -- Tools/OS
 # [ANDROID] --------------------------------------------
 export ANDROID_HOME='/Users/nicolas/Library/Android/sdk'
 #export ANDROID_HOME=~/Library/Android/sdk

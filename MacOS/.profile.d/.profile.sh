@@ -28,14 +28,18 @@ echo "Profile directory: $PROFILE_DIRECTORY"
 
 source ${PROFILE_DIRECTORY}/.profile-brew.sh
 source ${PROFILE_DIRECTORY}/.profile-bash.sh
+
 source ${PROFILE_DIRECTORY}/.profile-JVM.sh
 source ${PROFILE_DIRECTORY}/.profile-Go.sh
 source ${PROFILE_DIRECTORY}/.profile-Ruby.sh
 source ${PROFILE_DIRECTORY}/.profile-Node.js.sh
+
 source ${PROFILE_DIRECTORY}/.profile-Infrastructure.sh
 source ${PROFILE_DIRECTORY}/.profile-Android.sh
 source ${PROFILE_DIRECTORY}/.profile-Security.sh
+
 source ${PROFILE_DIRECTORY}/.profile-SSH.sh
+
 source ${PROFILE_DIRECTORY}/.profile-Misc.sh
 source ${PROFILE_DIRECTORY}/.profile-Work.sh
 
