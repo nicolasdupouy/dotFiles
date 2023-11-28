@@ -15,7 +15,12 @@ echo "source ~/.profile.nicolas.sh" >> ~/.bash_profile
 
 ### FreeBSD
 #### Link the configuration file
-**TODO**
+```shell
+ln -s $PWD/FreeBSD/.profile.d/.profile.sh ~/.profile.nicolas.sh
+echo "if [ -f \"$HOME/.profile.nicolas.sh\" ]; then
+   . $HOME/.profile.nicolas.sh
+fi" >> ~/.bashrc
+```
 
 ## Tmux
 ### Link the configuration file
