@@ -8,3 +8,5 @@ if [[ $DEBUG == "YES" ]] then
   echo "Specific Profile directory: $2"
   echo "Specific profile name: $3"
 fi;
+
+source ${COMMON_PROFILE_DIRECTORY}/.profile-Misc.sh

@@ -44,8 +44,3 @@ source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Security.sh
 
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-SSH.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Work.sh
-
-# Aliases
-alias ls='lsd'
-alias ll='lsd -lFtr'
-alias la='lsd -alFtr'

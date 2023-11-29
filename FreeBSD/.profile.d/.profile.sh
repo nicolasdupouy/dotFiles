@@ -30,11 +30,6 @@ COMMON_PROFILE_DIRECTORY=`realpath ${SPECIFIC_PROFILE_DIRECTORY}/../../Common/.p
 DEBUG=NO # YES or !YES
 source ${COMMON_PROFILE_DIRECTORY}/.profile.sh $COMMON_PROFILE_DIRECTORY $SPECIFIC_PROFILE_DIRECTORY $SPECIFIC_PROFILE_NAME $DEBUG
 
-# Shell aliases
-alias ls='lsd'
-alias ll='lsd -lFtr'
-alias la='lsd -alFtr'
-
 # Powerline.bash
 . ${HOME}/.config/powerline.bash
 PROMPT_COMMAND='__update_ps1 $?'
