@@ -23,25 +23,27 @@ function find_profile_directory() {
   echo "$return_value"
 }
 
-PROFILE_DIRECTORY=$(find_profile_directory)
-echo "Profile directory: $PROFILE_DIRECTORY"
+# Common profile
+SPECIFIC_PROFILE_DIRECTORY=$(find_profile_directory)
+SPECIFIC_PROFILE_NAME="MacOS"
+COMMON_PROFILE_DIRECTORY=`realpath ${SPECIFIC_PROFILE_DIRECTORY}/../../Common/.profile.d`
+DEBUG=NO # YES or !YES
+source ${COMMON_PROFILE_DIRECTORY}/.profile.sh $COMMON_PROFILE_DIRECTORY $SPECIFIC_PROFILE_DIRECTORY $SPECIFIC_PROFILE_NAME $DEBUG
 
-source ${PROFILE_DIRECTORY}/.profile-brew.sh
-source ${PROFILE_DIRECTORY}/.profile-bash.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-brew.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-bash.sh
 
-source ${PROFILE_DIRECTORY}/.profile-JVM.sh
-source ${PROFILE_DIRECTORY}/.profile-Go.sh
-source ${PROFILE_DIRECTORY}/.profile-Ruby.sh
-source ${PROFILE_DIRECTORY}/.profile-Node.js.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-JVM.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Go.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Ruby.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Node.js.sh
 
-source ${PROFILE_DIRECTORY}/.profile-Infrastructure.sh
-source ${PROFILE_DIRECTORY}/.profile-Android.sh
-source ${PROFILE_DIRECTORY}/.profile-Security.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Infrastructure.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Android.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Security.sh
 
-source ${PROFILE_DIRECTORY}/.profile-SSH.sh
-
-source ${PROFILE_DIRECTORY}/.profile-Misc.sh
-source ${PROFILE_DIRECTORY}/.profile-Work.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-SSH.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Work.sh
 
 # Aliases
 alias ls='lsd'
