@@ -33,4 +33,4 @@ source ${COMMON_PROFILE_DIRECTORY}/.profile.sh $COMMON_PROFILE_DIRECTORY $SPECIF
 #FreeBSD profile
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-bash.sh
 
-alias SSH_connect_Local_Chicago='ssh -i ~/.ssh/id_rsa_nicolas_NewYork_from_Miami nicolas@192.168.50.103'
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-SSH.sh
