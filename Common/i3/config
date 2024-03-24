@@ -81,3 +81,17 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+M move right
 
 # alternatively, you can use the cursor keys:
+
+
+
+# Colors
+set $blue #005588
+set $gray1 #4F305E
+set $gray2 #333333
+set $orange #FF8000
+set $purple #3B0B24
+
+client.focused          #994c94 #285577 #ffffff #2e9ef4   #285577
+client.focused $orange $orange #FFFFFF #333333
+#client.focused $blue $blue #FFFFFF #333333
+#client.focused $purple $purple #FFFFFF #333333
