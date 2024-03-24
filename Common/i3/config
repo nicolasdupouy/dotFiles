@@ -86,6 +86,9 @@ bindsym $mod+g split h
 # split in vertical orientation
 bindsym $mod+v split v
 
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
