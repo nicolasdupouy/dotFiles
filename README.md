@@ -22,6 +22,12 @@ echo "if [ -f \"$HOME/.profile.nicolas.sh\" ]; then
 fi" >> ~/.bashrc
 ```
 
+## i3
+### Link the configuration file
+```shell
+ln -s $PWD/Common/i3/config ~/.config/i3/config
+```
+
 ## Tmux
 ### Link the configuration file
 ```shell
