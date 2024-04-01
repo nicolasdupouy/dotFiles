@@ -11,7 +11,7 @@
 
 # VARIABLES
 ## variables (keyboard)
-set $mod Mod1
+set $alt Mod1
 set $left h
 set $down j
 set $up k
@@ -47,68 +47,68 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$alt to drag floating windows to their wanted position
+floating_modifier $alt
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $alt+Return exec kitty
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $alt+q kill
 
 # start Rofi (Program launcher)
 #@@@ Dracula theme
-bindsym $mod+t exec rofi -show window
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $alt+t exec rofi -show window
+bindsym $alt+d exec --no-startup-id rofi -show drun
 
 # change focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+bindsym $alt+$left focus left
+bindsym $alt+$down focus down
+bindsym $alt+$up focus up
+bindsym $alt+$right focus right
 
 # move focused window
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+bindsym $alt+Shift+$left move left
+bindsym $alt+Shift+$down move down
+bindsym $alt+Shift+$up move up
+bindsym $alt+Shift+$right move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+bindsym $alt+g split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $alt+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $alt+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $alt+s layout stacking
+bindsym $alt+w layout tabbed
+bindsym $alt+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $alt+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $alt+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+p focus parent
+bindsym $alt+p focus parent
 
 # focus the child container
-bindsym $mod+c focus child
+bindsym $alt+c focus child
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $alt+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+bindsym $alt+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -124,35 +124,35 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $alt+1 workspace number $ws1
+bindsym $alt+2 workspace number $ws2
+bindsym $alt+3 workspace number $ws3
+bindsym $alt+4 workspace number $ws4
+bindsym $alt+5 workspace number $ws5
+bindsym $alt+6 workspace number $ws6
+bindsym $alt+7 workspace number $ws7
+bindsym $alt+8 workspace number $ws8
+bindsym $alt+9 workspace number $ws9
+bindsym $alt+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $alt+Shift+1 move container to workspace number $ws1
+bindsym $alt+Shift+2 move container to workspace number $ws2
+bindsym $alt+Shift+3 move container to workspace number $ws3
+bindsym $alt+Shift+4 move container to workspace number $ws4
+bindsym $alt+Shift+5 move container to workspace number $ws5
+bindsym $alt+Shift+6 move container to workspace number $ws6
+bindsym $alt+Shift+7 move container to workspace number $ws7
+bindsym $alt+Shift+8 move container to workspace number $ws8
+bindsym $alt+Shift+9 move container to workspace number $ws9
+bindsym $alt+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $alt+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $alt+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -173,13 +173,13 @@ mode "resize" {
         bindsym Up          resize shrink height 10 px or 10 ppt
         bindsym Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # back to normal: Enter or Escape or $alt+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $alt+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $alt+r mode "resize"
 
 # Colors
 #@@@ Dracula theme
