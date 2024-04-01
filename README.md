@@ -26,6 +26,7 @@ fi" >> ~/.bashrc
 ### Link the configuration file
 ```shell
 ln -s $PWD/Common/i3/config ~/.config/i3/config
+ln -s $PWD/Common/i3status/i3status.conf ~/.config/i3status
 ```
 
 ## Tmux
