@@ -11,5 +11,9 @@ test -r /Users/nicolas/.opam/opam-init/init.sh && . /Users/nicolas/.opam/opam-in
 
 # [Kubernetes]
 alias k='kubectl'
-# Bash completion for "k" as "kubecl"
+# Bash completion for "k" as "kubectl"
 complete -o default -F __start_kubectl k
+
+alias kubectl="kubecolor"
+# Bash completion for "kubecolor" as "kubectl"
+complete -o default -F __start_kubectl kubecolor
