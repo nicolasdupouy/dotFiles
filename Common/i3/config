@@ -47,6 +47,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+
 #############
 ## ACTIONS ##
 #############
@@ -194,6 +195,13 @@ bindsym $alt+r mode "resize"
 ############
 ## DESIGN ##
 ############
+# Windows disposition
+# -- Window title alignment
+title_align center
+# -- Inner gaps: space between two adjacent windows (or split containers).
+gaps inner 20
+# -- Outer gaps: space along the screen edges.
+gaps outer -10
 
 # Colors
 #@@@ Dracula theme
