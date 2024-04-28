@@ -204,9 +204,13 @@ gaps inner 20
 gaps outer -10
 
 # Colors
+set $dracula-blue #6272A4
+set $orange #FF8000
+set $purple #A020F0
+
 #@@@ Dracula theme
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused          $purple $purple #F8F8F2 $purple   $purple
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
