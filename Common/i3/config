@@ -47,35 +47,20 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Use Mouse+$alt to drag floating windows to their wanted position
-floating_modifier $alt
-
+#############
+## ACTIONS ##
+#############
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# -- Open/change
+# --------------
 # start a terminal
 bindsym $alt+Return exec kitty
 
 # kill focused window
 bindsym $alt+q kill
-
-# start Rofi (Program launcher)
-#@@@ Dracula theme
-bindsym $alt+t exec rofi -show window
-bindsym $alt+d exec --no-startup-id rofi -show drun
-
-# change focus
-bindsym $alt+$left focus left
-bindsym $alt+$down focus down
-bindsym $alt+$up focus up
-bindsym $alt+$right focus right
-
-# move focused window
-bindsym $alt+Shift+$left move left
-bindsym $alt+Shift+$down move down
-bindsym $alt+Shift+$up move up
-bindsym $alt+Shift+$right move right
 
 # split in horizontal orientation
 bindsym $alt+g split h
@@ -91,11 +76,19 @@ bindsym $alt+s layout stacking
 bindsym $alt+w layout tabbed
 bindsym $alt+e layout toggle split
 
-# toggle tiling / floating
-bindsym $alt+Shift+space floating toggle
+# -- Move
+# -------
+# change focus
+bindsym $alt+$left focus left
+bindsym $alt+$down focus down
+bindsym $alt+$up focus up
+bindsym $alt+$right focus right
 
-# change focus between tiling / floating windows
-bindsym $alt+space focus mode_toggle
+# move focused window
+bindsym $alt+Shift+$left move left
+bindsym $alt+Shift+$down move down
+bindsym $alt+Shift+$up move up
+bindsym $alt+Shift+$right move right
 
 # focus the parent container
 bindsym $alt+p focus parent
@@ -110,6 +103,19 @@ bindsym $alt+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $alt+minus scratchpad show
 
+# -- Floating windows
+# -------------------
+# toggle tiling / floating
+bindsym $alt+Shift+space floating toggle
+
+# Use Mouse+$alt to drag floating windows to their wanted position
+floating_modifier $alt
+
+# change focus between tiling / floating windows
+bindsym $alt+space focus mode_toggle
+
+# -- Workspaces
+# -------------
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -147,6 +153,8 @@ bindsym $alt+Shift+8 move container to workspace number $ws8
 bindsym $alt+Shift+9 move container to workspace number $ws9
 bindsym $alt+Shift+0 move container to workspace number $ws10
 
+# -- Reload/Restart/Exit
+# ----------------------
 # reload the configuration file
 bindsym $alt+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -154,6 +162,8 @@ bindsym $alt+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# -- Resize
+# ---------
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -181,6 +191,10 @@ mode "resize" {
 
 bindsym $alt+r mode "resize"
 
+############
+## DESIGN ##
+############
+
 # Colors
 #@@@ Dracula theme
 # class                 border  bground text    indicator child_border
@@ -192,6 +206,9 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
+#######################
+## EXTERNAL PROGRAMS ##
+#######################
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -211,3 +228,8 @@ bar {
             binding_mode       #FF5555 #FF5555 #F8F8F2
           }
 }
+
+# start Rofi (Program launcher)
+#@@@ Dracula theme
+bindsym $alt+t exec rofi -show window
+bindsym $alt+d exec --no-startup-id rofi -show drun
