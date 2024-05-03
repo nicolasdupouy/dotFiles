@@ -27,7 +27,12 @@ fi" >> ~/.bashrc
 ```shell
 ln -s $PWD/Common/i3/config ~/.config/i3/config
 ln -s $PWD/Common/i3status/i3status.conf ~/.config/i3status
+ln -s $PWD/Common/Rofi/ ~/.config/rofi
 ```
+
+See:
+- https://draculatheme.com/i3
+- https://draculatheme.com/rofi
 
 ## Tmux
 ### Link the configuration file
