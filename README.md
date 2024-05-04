@@ -34,6 +34,13 @@ See:
 - https://draculatheme.com/i3
 - https://draculatheme.com/rofi
 
+### Polybar
+#### Link the configuration file
+```shell
+mkdir ~/.config/Polybar/
+ln -s $PWD/Common/Polybar/config.ini ~/.config/Polybar/config.ini
+```
+
 ## Tmux
 ### Link the configuration file
 ```shell

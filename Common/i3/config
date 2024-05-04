@@ -221,27 +221,12 @@ client.background       #F8F8F2
 #######################
 ## EXTERNAL PROGRAMS ##
 #######################
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start Polybar (Status bar)
 bar {
-        status_command polybar --config=/usr/local/etc/polybar/config.ini
+        status_command polybar --config=~/.config/Polybar/config.ini
         position top
-
-        #@@@ Dracula theme
-        colors {
-            background #282A36
-            statusline #F8F8F2
-            separator  #44475A
-
-            focused_workspace  #44475A #44475A #F8F8F2
-            active_workspace   #282A36 #44475A #F8F8F2
-            inactive_workspace #282A36 #282A36 #BFBFBF
-            urgent_workspace   #FF5555 #FF5555 #F8F8F2
-            binding_mode       #FF5555 #FF5555 #F8F8F2
-          }
 }
 
 # start Rofi (Program launcher)
-#@@@ Dracula theme
 bindsym $alt+t exec rofi -show window
 bindsym $alt+d exec --no-startup-id rofi -show drun
