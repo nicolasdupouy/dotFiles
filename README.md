@@ -37,8 +37,7 @@ See:
 ### Polybar
 #### Link the configuration file
 ```shell
-mkdir ~/.config/Polybar/
-ln -s $PWD/Common/Polybar/config.ini ~/.config/Polybar/config.ini
+ln -s $PWD/Common/Polybar/ ~/.config/
 ```
 
 ## Tmux

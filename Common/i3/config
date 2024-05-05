@@ -222,11 +222,8 @@ client.background       #F8F8F2
 ## EXTERNAL PROGRAMS ##
 #######################
 # Start Polybar (Status bar)
-bar {
-        status_command polybar --config=~/.config/Polybar/config.ini
-        position top
-}
+exec_always --no-startup-id $HOME/.config/Polybar/launch.sh
 
-# start Rofi (Program launcher)
+# Start Rofi (Program launcher)
 bindsym $alt+t exec rofi -show window
 bindsym $alt+d exec --no-startup-id rofi -show drun
