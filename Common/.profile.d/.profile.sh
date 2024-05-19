@@ -10,4 +10,7 @@ then
   echo "Specific profile name: $3"
 fi;
 
+source ${COMMON_PROFILE_DIRECTORY}/_functions_binary_presence.sh
+
 source ${COMMON_PROFILE_DIRECTORY}/.profile-Misc.sh
+source ${COMMON_PROFILE_DIRECTORY}/.profile-Git.sh
