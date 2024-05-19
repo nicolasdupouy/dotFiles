@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
 
 # -- Aliases
 # Git
@@ -19,25 +18,8 @@ alias gpod='git push origin --delete'
 ## git remote
 alias gruop='git remote update origin --prune'
 
-function is_binary_exists() {
-  if [ -z `which $1` ]
-  then
-    return 1
-  else
-    return 0
-  fi
-}
-
-function verify() {
-  echo "param = $1"
-  if [ is_binary_exists $1 ]
-  then
-    echo 'ls exists'
-  fi
-}
-
-verify ls
-verify gs
+# NB: "_functions_binary_presence.sh" must be sourced
+if_binary_exists_do gs "alias ghostscript=\gs"
 
 # @see:
 # https://gist.github.com/DavidToca/3086571
