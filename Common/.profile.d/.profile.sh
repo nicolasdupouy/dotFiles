@@ -11,3 +11,4 @@ then
 fi;
 
 source ${COMMON_PROFILE_DIRECTORY}/.profile-Misc.sh
+source ${COMMON_PROFILE_DIRECTORY}/.profile-Git.sh
