@@ -1,34 +1,57 @@
 # Hosts variables
 ## Users
 USER_NICOLAS=nicolas
+USER_EC2=ec2-user
+USER_ADMIN=admin
+USER_HANANE_HOSTINGER=u157694837
+USER_UBUNTU=ubuntu
 
 ## Hosts
-HOST_CHICAGO=192.168.50.102
-HOST_NEW_YORK=192.168.50.103
-HOST_LOS_ANGELES=192.168.50.104
+### Local
+HOST_LOCAL_CHICAGO=192.168.50.102
+HOST_LOCAL_NEW_YORK=192.168.50.103
+HOST_LOCAL_LOS_ANGELES=192.168.50.104
+### LinkCy
+HOST_LINKCY_PAYNOVATE_PROXY=13.39.147.239
+HOST_LINKCY_LOTUS=15.188.54.100
+HOST_LINKCY_GITLABRUNNER=35.180.66.45
+HOST_LINKCY_WEBSITE_AKROLAB=13.39.86.187
+HOST_LINKCY_ONBOARDING_DOCUMENTS=13.38.129.225
+### Other
+HOST_OTHER_HANANE_HOSTINGER=89.117.169.125
+HOST_OTHER_MOOD_LENTILLES=52.47.156.249
 
 ## SSH Keys
 ### Local
-PRIVATE_KEY_HOST_CHICAGO_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_Chicago
-PRIVATE_KEY_HOST_NEW_YORK_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_NewYork
-PRIVATE_KEY_HOST_LOS_ANGELES_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_LosAngeles
+PRIVATE_KEY_HOST_LOCAL_CHICAGO_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_Chicago
+PRIVATE_KEY_HOST_LOCAL_NEW_YORK_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_NewYork
+PRIVATE_KEY_HOST_LOCAL_LOS_ANGELES_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_LosAngeles
+### LinkCy
+PRIVATE_KEY_HOST_LINKCY_PAYNOVATE_PROXY_USER_ADMIN=~/.ssh/LinkCy/paynovateProxy.pem
+PRIVATE_KEY_HOST_LINKCY_LOTUS_USER_ADMIN=~/.ssh/LinkCy/lotus.pem
+PRIVATE_KEY_HOST_LINKCY_GITLABRUNNER_USER_ADMIN=~/.ssh/LinkCy/GitLabRunner.pem
+PRIVATE_KEY_HOST_LINKCY_WEBSITE_AKROLAB_USER_EC2=~/.ssh/LinkCy/websiteAkrolab
+PRIVATE_KEY_HOST_LINKCY_ONBOARDING_DOCUMENTS_USER_ADMIN=~/.ssh/LinkCy/OnboardingDocuments.pem
+### Other
+PRIVATE_KEY_HOST_OTHER_HANANE_HOSTINGER_USER_HANANE_HOSTINGER=~/.ssh/Other/Hanane/website-Hanane-Hostinger_id_rsa
+PRIVATE_KEY_HOST_OTHER_MOOD_LENTILLES_USER_UBUNTU=~/.ssh/Other/Mathieu_bottausci/id_rsa_mood_lentilles
 
 # -- Aliases
 # Local network
-alias alias_SSH_connect_Local_Chicago='ssh -i $PRIVATE_KEY_HOST_CHICAGO_USER_NICOLAS $USER_NICOLAS@$HOST_CHICAGO'
-alias alias_SSH_connect_Local_NewYork='ssh -i $PRIVATE_KEY_HOST_NEW_YORK_USER_NICOLAS $USER_NICOLAS@$HOST_NEW_YORK'
-alias alias_SSH_connect_Local_LosAngeles='ssh -i $PRIVATE_KEY_HOST_LOS_ANGELES_USER_NICOLAS $USER_NICOLAS@$HOST_LOS_ANGELES'
+alias alias_SSH_connect_Local_Chicago='ssh -i $PRIVATE_KEY_HOST_LOCAL_CHICAGO_USER_NICOLAS $USER_NICOLAS@$HOST_LOCAL_CHICAGO'
+alias alias_SSH_connect_Local_NewYork='ssh -i $PRIVATE_KEY_HOST_LOCAL_NEW_YORK_USER_NICOLAS $USER_NICOLAS@$HOST_LOCAL_NEW_YORK'
+alias alias_SSH_connect_Local_LosAngeles='ssh -i $PRIVATE_KEY_HOST_LOCAL_LOS_ANGELES_USER_NICOLAS $USER_NICOLAS@$HOST_LOCAL_LOS_ANGELES'
 
 # LinkCy
-alias alias_SSH_connect_Linkcy_Paynovate_Proxy='ssh -i ~/.ssh/LinkCy/paynovateProxy.pem admin@13.39.147.239'
-alias alias_SSH_connect_Linkcy_Lotus='ssh -i ~/.ssh/LinkCy/lotus.pem admin@15.188.54.100'
-alias alias_SSH_connect_Linkcy_GitLabRunner='ssh -i ~/.ssh/LinkCy/GitLabRunner.pem admin@35.180.66.45'
-alias alias_SSH_connect_Linkcy_Website='ssh -i ~/.ssh/LinkCy/websiteAkrolab ec2-user@13.39.86.187'
-alias alias_SSH_connect_Linkcy_OnboardingDocuments='ssh -i ~/.ssh/LinkCy/OnboardingDocuments.pem admin@13.38.129.225'
+alias alias_SSH_connect_Linkcy_Paynovate_Proxy='ssh -i $PRIVATE_KEY_HOST_LINKCY_PAYNOVATE_PROXY_USER_ADMIN $USER_ADMIN@$HOST_LINKCY_PAYNOVATE_PROXY'
+alias alias_SSH_connect_Linkcy_Lotus='ssh -i $PRIVATE_KEY_HOST_LINKCY_LOTUS_USER_ADMIN $USER_ADMIN@$HOST_LINKCY_LOTUS'
+alias alias_SSH_connect_Linkcy_GitLabRunner='ssh -i $PRIVATE_KEY_HOST_LINKCY_GITLABRUNNER_USER_ADMIN $USER_ADMIN@$HOST_LINKCY_GITLABRUNNER'
+alias alias_SSH_connect_Linkcy_Website='ssh -i $PRIVATE_KEY_HOST_LINKCY_WEBSITE_AKROLAB_USER_EC2 $USER_EC2@$HOST_LINKCY_WEBSITE_AKROLAB'
+alias alias_SSH_connect_Linkcy_OnboardingDocuments='ssh -i $PRIVATE_KEY_HOST_LINKCY_ONBOARDING_DOCUMENTS_USER_ADMIN $USER_ADMIN@$HOST_LINKCY_ONBOARDING_DOCUMENTS'
 
 # Other
 ## Hanane
-alias alias_SSH_connect_Other_Hanane_Hostinger='ssh -i ~/.ssh/Other/Hanane/website-Hanane-Hostinger_id_rsa -p 65002 u157694837@89.117.169.125'
+alias alias_SSH_connect_Other_Hanane_Hostinger='ssh -i $PRIVATE_KEY_HOST_OTHER_HANANE_HOSTINGER_USER_HANANE_HOSTINGER -p 65002 $USER_HANANE_HOSTINGER@$HOST_OTHER_HANANE_HOSTINGER'
 ## Mathieu
-alias alias_SSH_connect_Other_Mathieu_mood_lentilles_fr='ssh -i ~/.ssh/Other/Mathieu_bottausci/id_rsa_mood_lentilles ubuntu@52.47.156.249'
+alias alias_SSH_connect_Other_Mathieu_mood_lentilles_fr='ssh -i $PRIVATE_KEY_HOST_OTHER_MOOD_LENTILLES_USER_UBUNTU $USER_UBUNTU@$HOST_OTHER_MOOD_LENTILLES'
 
