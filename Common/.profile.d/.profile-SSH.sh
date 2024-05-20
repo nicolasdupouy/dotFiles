@@ -1,8 +1,23 @@
+# Hosts variables
+## Users
+USER_NICOLAS=nicolas
+
+## Hosts
+HOST_CHICAGO=192.168.50.102
+HOST_NEW_YORK=192.168.50.103
+HOST_LOS_ANGELES=192.168.50.104
+
+## SSH Keys
+### Local
+PRIVATE_KEY_HOST_CHICAGO_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_Chicago
+PRIVATE_KEY_HOST_NEW_YORK_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_NewYork
+PRIVATE_KEY_HOST_LOS_ANGELES_USER_NICOLAS=~/.ssh/Local/id_rsa_nicolas_LosAngeles
+
 # -- Aliases
 # Local network
-alias alias_SSH_connect_Local_Chicago='ssh -i ~/.ssh/Local/id_rsa_nicolas_Chicago nicolas@Chicago'
-alias alias_SSH_connect_Local_NewYork='ssh -i ~/.ssh/Local/id_rsa_nicolas_NewYork nicolas@NewYork'
-alias alias_SSH_connect_Local_LosAngeles='ssh -i ~/.ssh/Local/id_rsa_nicolas_LosAngeles nicolas@LosAngeles'
+alias alias_SSH_connect_Local_Chicago='ssh -i $PRIVATE_KEY_HOST_CHICAGO_USER_NICOLAS $USER_NICOLAS@$HOST_CHICAGO'
+alias alias_SSH_connect_Local_NewYork='ssh -i $PRIVATE_KEY_HOST_NEW_YORK_USER_NICOLAS $USER_NICOLAS@$HOST_NEW_YORK'
+alias alias_SSH_connect_Local_LosAngeles='ssh -i $PRIVATE_KEY_HOST_LOS_ANGELES_USER_NICOLAS $USER_NICOLAS@$HOST_LOS_ANGELES'
 
 # LinkCy
 alias alias_SSH_connect_Linkcy_Paynovate_Proxy='ssh -i ~/.ssh/LinkCy/paynovateProxy.pem admin@13.39.147.239'
