@@ -14,3 +14,4 @@ source ${COMMON_PROFILE_DIRECTORY}/_functions_binary_presence.sh
 
 source ${COMMON_PROFILE_DIRECTORY}/.profile-Misc.sh
 source ${COMMON_PROFILE_DIRECTORY}/.profile-Git.sh
+source ${COMMON_PROFILE_DIRECTORY}/.profile-SSH.sh
