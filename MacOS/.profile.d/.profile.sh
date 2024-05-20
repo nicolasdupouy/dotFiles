@@ -42,5 +42,4 @@ source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Infrastructure.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Android.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Security.sh
 
-source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-SSH.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Work.sh
