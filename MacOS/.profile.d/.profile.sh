@@ -44,3 +44,6 @@ source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Security.sh
 
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-SSH.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Work.sh
+
+
+export SSLKEYLOGFILE=~/Downloads/SSL-key-log.log
