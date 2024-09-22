@@ -79,17 +79,29 @@ bindsym $alt+e layout toggle split
 
 # -- Move
 # -------
-# change focus
+# change focus (h, j, k, l)
 bindsym $alt+$left focus left
 bindsym $alt+$down focus down
 bindsym $alt+$up focus up
 bindsym $alt+$right focus right
 
-# move focused window
+# change focus (Left, Down, Up, Right)
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt+Right focus right
+
+# move focused window (h, j, k, l)
 bindsym $alt+Shift+$left move left
 bindsym $alt+Shift+$down move down
 bindsym $alt+Shift+$up move up
 bindsym $alt+Shift+$right move right
+
+# move focused window (Left, Down, Up, Right)
+bindsym $alt+Shift+Left move left
+bindsym $alt+Shift+Down move down
+bindsym $alt+Shift+Up move up
+bindsym $alt+Shift+Right move right
 
 # focus the parent container
 bindsym $alt+p focus parent
