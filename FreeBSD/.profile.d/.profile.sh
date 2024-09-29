@@ -32,5 +32,6 @@ source ${COMMON_PROFILE_DIRECTORY}/.profile.sh $COMMON_PROFILE_DIRECTORY $SPECIF
 
 #FreeBSD profile
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-bash.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Python.sh
 
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-SMBfs.sh
