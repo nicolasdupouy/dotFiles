@@ -30,8 +30,14 @@ COMMON_PROFILE_DIRECTORY=`realpath ${SPECIFIC_PROFILE_DIRECTORY}/../../Common/.p
 DEBUG=NO # YES or !YES
 source ${COMMON_PROFILE_DIRECTORY}/.profile.sh $COMMON_PROFILE_DIRECTORY $SPECIFIC_PROFILE_DIRECTORY $SPECIFIC_PROFILE_NAME $DEBUG
 
-#FreeBSD profile
+# FreeBSD profiles
+# - System
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-bash.sh
-source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Python.sh
 
+# - Languages
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Python.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Go.sh
+
+# - Misc
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-SMBfs.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Infrastructure.sh
