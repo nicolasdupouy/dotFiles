@@ -37,6 +37,7 @@ source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-bash.sh
 
 # - Languages
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-JVM.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Python.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Go.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Ruby.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Node.js.sh
