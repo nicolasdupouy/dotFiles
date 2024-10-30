@@ -30,14 +30,19 @@ COMMON_PROFILE_DIRECTORY=`realpath ${SPECIFIC_PROFILE_DIRECTORY}/../../Common/.p
 DEBUG=NO # YES or !YES
 source ${COMMON_PROFILE_DIRECTORY}/.profile.sh $COMMON_PROFILE_DIRECTORY $SPECIFIC_PROFILE_DIRECTORY $SPECIFIC_PROFILE_NAME $DEBUG
 
+# MacOS profiles
+# - System
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-brew.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-bash.sh
 
+# - Languages
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-JVM.sh
+source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Python.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Go.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Ruby.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Node.js.sh
 
+# - Misc
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Infrastructure.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Android.sh
 source ${SPECIFIC_PROFILE_DIRECTORY}/.profile-Security.sh
